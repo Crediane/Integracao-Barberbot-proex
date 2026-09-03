@@ -1,0 +1,93 @@
+/* ============================================================
+   JACY CABELEIREIRO - Ajustes PageSpeed Mobile
+   Arquivo novo, sem alterar a lógica PHP/JS do sistema.
+   Objetivo: reduzir bloqueio de renderização, CLS e atraso de fonte.
+   ============================================================ */
+
+html{font-display:swap;}
+html,body{font-family:Arial,Helvetica,sans-serif;max-width:100%;overflow-x:hidden;text-rendering:optimizeSpeed;}
+body{background:#070604;color:#f8f1e5;}
+img,svg,video,canvas{max-width:100%;height:auto;}
+img{content-visibility:auto;}
+.header_section{min-height:76px;}
+.hero_area,.slider_section{contain:layout paint style;}
+.carousel-item>div[style*="min-height:720px"]{min-height:620px!important;}
+@media (max-width:768px){
+  .header_section{min-height:68px;}
+  .carousel-item>div[style*="min-height:720px"]{min-height:560px!important;}
+  .slider_section .row[style*="min-height:720px"]{min-height:560px!important;}
+  h1,h2{line-height:1.15;}
+}
+.box-imagem-simulacao img{width:100%;height:auto;aspect-ratio:13/9;object-fit:contain;}
+#target{aspect-ratio:1/1;object-fit:cover;}
+.fa{font-display:swap;}
+
+
+/* ============================================================
+   PageSpeed V3 - estabilidade visual
+   Foco no print enviado: reduzir CLS alto e manter LCP/TBT sob controle.
+   ============================================================ */
+.slider_section,
+.slider_section .carousel-inner,
+.slider_section .carousel-item,
+.slider-lcp-box,
+.slider-lcp-row{
+  min-height:720px!important;
+}
+.slider_section .carousel-item:not(.active){
+  display:none;
+}
+.slider_section .carousel-item.active{
+  display:block;
+}
+.slider_section .detail-box h1,
+.slider_section .detail-box h2,
+.slider_section .detail-box p{
+  text-wrap:balance;
+}
+.product_owl-carousel,
+.client_owl-carousel,
+.google-reviews-carousel{
+  min-height:320px;
+  overflow:hidden;
+}
+.product_owl-carousel .item,
+.client_owl-carousel .item,
+.google-reviews-carousel .item{
+  min-height:320px;
+}
+.google-reviews-carousel{
+  min-height:260px;
+}
+.google-reviews-carousel .item{
+  min-height:260px;
+}
+.cookie-banner{
+  contain:layout paint style;
+  transform:translateY(0);
+  opacity:1;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.cookie-banner.hide{
+  display:block!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  transform:translateY(100%)!important;
+}
+@media (max-width:991.98px){
+  .slider_section,
+  .slider_section .carousel-inner,
+  .slider_section .carousel-item,
+  .slider-lcp-box,
+  .slider-lcp-row{min-height:620px!important;}
+}
+@media (max-width:767.98px){
+  .slider_section,
+  .slider_section .carousel-inner,
+  .slider_section .carousel-item,
+  .slider-lcp-box,
+  .slider-lcp-row{min-height:520px!important;}
+  .product_owl-carousel,
+  .client_owl-carousel,
+  .google-reviews-carousel{min-height:300px;}
+}

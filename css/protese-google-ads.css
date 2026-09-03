@@ -1,0 +1,639 @@
+/* ============================================================
+   CSS específico da página de Prótese Capilar
+   Arquivo separado para manter o PHP mais limpo.
+   ============================================================ */
+
+:root{
+    --bg:#0b0b0d;
+    --card:#1a1c23;
+    --text:#e9e9ee;
+    --muted:#d2d6de;
+    --brand:#2d86ff;
+  }
+
+  html,
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+  }
+
+  body{
+    overflow-x:hidden;
+  }
+
+  main{
+    display:block;
+    margin:0;
+    padding:0;
+    background:#020202;
+  }
+
+  .sr-only{
+    position:absolute !important;
+    width:1px !important;
+    height:1px !important;
+    padding:0 !important;
+    margin:-1px !important;
+    overflow:hidden !important;
+    clip:rect(0,0,0,0) !important;
+    white-space:nowrap !important;
+    border:0 !important;
+  }
+
+  .grecaptcha-badge{
+    z-index:2147483647;
+  }
+
+  main > section:not(.slider_section),
+  #agenda-seletiva,
+  #galeria-banco,
+  .experience-section,
+  #depoimentos{
+    content-visibility:auto;
+    contain-intrinsic-size:900px;
+  }
+
+  /* Banner padrão do sistema */
+  .slider_section{
+    position:relative;
+    display:block !important;
+    margin:0 !important;
+    padding:0 !important;
+    background:#000 !important;
+    overflow:hidden;
+  }
+
+  .slider_section #customCarouselProtese{
+    position:relative !important;
+    width:100%;
+    background:#000;
+  }
+
+  .slider_section #customCarouselProtese > .container{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:6;
+    pointer-events:none;
+  }
+
+  .slider_section .carousel-inner,
+  .slider_section .carousel-item{
+    background:#000;
+  }
+
+  .slider_section .carousel-item > div{
+    min-height:520px;
+  }
+
+  .slider_section .carousel_btn-box{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:15px;
+    right:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:0 !important;
+    padding:0 !important;
+    width:auto;
+    pointer-events:none;
+    z-index:10;
+  }
+
+  .slider_section .carousel-control-prev,
+  .slider_section .carousel-control-next{
+    position:relative !important;
+    inset:auto !important;
+    width:52px !important;
+    height:52px !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:rgba(17,17,17,0.7) !important;
+    border:1px solid rgba(255,255,255,.22) !important;
+    color:#fff !important;
+    opacity:1 !important;
+    text-shadow:none !important;
+    box-shadow:0 8px 18px rgba(0,0,0,.28);
+    pointer-events:auto;
+    transition:background .3s ease, transform .2s ease;
+  }
+
+  .slider_section .carousel-control-prev:hover,
+  .slider_section .carousel-control-next:hover{
+    background:#b8862d !important;
+    color:#fff !important;
+    text-decoration:none;
+  }
+
+  .section{
+    margin:0;
+    padding:28px 0;
+    background:#020202;
+    border-top:1px solid #161616;
+  }
+
+  /* Correção: evita espaço vazio entre o banner e a próxima seção quando não houver cards de serviços */
+  .section:empty{
+    display:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    min-height:0 !important;
+  }
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+    background:#000;
+  }
+
+  .card .p{
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .price{
+    font-weight:800;
+    color:#fff;
+  }
+
+  .muted{
+    color:var(--muted);
+  }
+
+  /* Experiência */
+  .xp-wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 16px;
+    position:relative;
+    z-index:2;
+  }
+
+  .xp-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:32px;
+    align-items:center;
+  }
+
+  .xp-left-year{
+    position:relative;
+    text-align:center;
+  }
+
+  .xp-year{
+    display:block;
+    margin:0;
+    font-size:min(22vw,200px);
+    line-height:.85;
+    font-weight:900;
+    letter-spacing:2px;
+    background:linear-gradient(180deg,#ffffff 0%,#b9c5ff 60%,#8aa2ff 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+    text-shadow:0 10px 40px rgba(0,0,0,.25);
+  }
+
+  .xp-subtitle{
+    display:block;
+    margin:0;
+    font-size:28px;
+    font-weight:800;
+    color:#cfe1ff;
+  }
+
+  .xp-underline{
+    width:120px;
+    height:4px;
+    background:linear-gradient(90deg,#2d86ff,#3ddc97);
+    border-radius:6px;
+    margin:10px auto 18px;
+  }
+
+  .xp-visitas{
+    background:rgba(255,255,255,.05);
+    border:2px solid rgba(66,133,244,.30);
+    border-radius:15px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    max-width:100%;
+  }
+
+  .xp-vis-num{
+    font-size:2.4rem;
+    font-weight:800;
+    color:#4285f4;
+    line-height:1;
+    margin:0;
+  }
+
+  .xp-vis-label{
+    font-size:.9rem;
+    color:#bbbbbb;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+    margin:0;
+  }
+
+  .xp-title{
+    color:#ffffff;
+    font-size:clamp(28px,4.4vw,56px);
+    line-height:1.05;
+    font-weight:900;
+    margin:0 0 10px;
+  }
+
+  .xp-title .blue{
+    color:#8ab4ff;
+  }
+
+  .xp-desc{
+    color:#d7dbff;
+    line-height:1.75;
+    margin:0 0 22px;
+    max-width:60ch;
+    font-size:18px;
+  }
+
+  .exp-stats{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    margin-top:26px;
+  }
+
+  .exp-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    min-height:120px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .exp-num{
+    font-size:2.4rem;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:6px;
+  }
+
+  .exp-label{
+    font-size:.9rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#bbbbbb;
+    font-weight:600;
+  }
+
+  .exp-num--blue{
+    color:#4285f4;
+  }
+
+  .exp-num--green{
+    color:#34a853;
+  }
+
+  .exp-num--gold{
+    color:#fbbc04;
+  }
+
+  .xp-badges{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+
+  .xp-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:800;
+    border:1px solid;
+  }
+
+  .xp-badge--cert{
+    background:#0e1935;
+    border-color:rgba(141,176,255,.25);
+    color:#cfe1ff;
+  }
+
+  .xp-badge--qual{
+    background:#0f1d15;
+    border-color:rgba(83,214,155,.25);
+    color:#bff3dd;
+  }
+
+  .xp-badge .dot{
+    display:inline-grid;
+    place-items:center;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    flex:0 0 22px;
+  }
+
+  .xp-badge--cert .dot{
+    background:#2d86ff;
+    color:#ffffff;
+  }
+
+  .xp-badge--qual .dot{
+    background:#3ddc97;
+    color:#0d2a1f;
+  }
+
+  .experience-section.visitas-normal{
+    --vis-w:100%;
+    --vis-pad:20px;
+    --vis-num:2.4rem;
+    --vis-icon:2.2rem;
+    --vis-bw:2px;
+    --under-w:120px;
+    --under-h:4px;
+    --under-m:10px auto 18px;
+  }
+
+  .experience-section.visitas-normal .xp-visitas{
+    max-width:var(--vis-w);
+    margin:10px auto 0;
+    padding:var(--vis-pad);
+    border-width:var(--vis-bw);
+    border-radius:12px;
+  }
+
+  .experience-section.visitas-normal .xp-visitas > div:first-child{
+    font-size:var(--vis-icon) !important;
+    line-height:1;
+  }
+
+  .experience-section.visitas-normal .xp-visitas .xp-vis-num{
+    font-size:var(--vis-num);
+  }
+
+  .experience-section.visitas-normal .xp-left-year .xp-underline{
+    width:var(--under-w);
+    height:var(--under-h);
+    margin:var(--under-m);
+  }
+
+  /* Modal específico da página */
+  #modalSimulacaoCliente .modal-dialog{
+    max-width:1100px;
+    margin:1.5rem auto;
+  }
+
+  #modalSimulacaoCliente .modal-content{
+    border-radius:18px;
+    border:0;
+    overflow:hidden;
+    box-shadow:0 18px 50px rgba(0,0,0,.25);
+  }
+
+  #modalSimulacaoCliente .modal-header{
+    background:linear-gradient(90deg,#111 0%,#1f1f1f 100%);
+    color:#fff;
+    border-bottom:0;
+    padding:18px 22px;
+  }
+
+  #modalSimulacaoCliente .modal-header .close{
+    color:#fff;
+    opacity:1;
+    text-shadow:none;
+  }
+
+  #modalSimulacaoCliente .modal-body{
+    background:#f7f8fa;
+    padding:22px;
+  }
+
+  #modalSimulacaoCliente .alert{
+    border-radius:12px;
+    border:1px solid #d7c29a;
+    background:#f7f0e3;
+    color:#5e4824;
+    margin-bottom:18px;
+  }
+
+  #modalSimulacaoCliente .form-group label{
+    font-weight:700;
+    color:#333;
+    margin-bottom:8px;
+  }
+
+  #modalSimulacaoCliente .form-control{
+    border-radius:10px;
+    min-height:46px;
+    border:1px solid #d8dee6;
+    box-shadow:none;
+  }
+
+  #modalSimulacaoCliente .form-control:focus{
+    border-color:#b8862d;
+    box-shadow:0 0 0 .15rem rgba(184,134,45,.15);
+  }
+
+  .painel-comparacao-simulacao{
+    background:#fff;
+    border:1px solid #e4e7eb;
+    border-radius:16px;
+    padding:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
+    height:100%;
+  }
+
+  .painel-comparacao-simulacao .titulo-painel{
+    font-size:15px;
+    font-weight:700;
+    color:#2d3436;
+    margin-bottom:12px;
+  }
+
+  .box-imagem-simulacao{
+    background:linear-gradient(180deg,#ffffff 0%,#f8f9fb 100%);
+    border:1px solid #dfe4ea;
+    border-radius:14px;
+    min-height:340px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .box-imagem-simulacao img{
+    position:relative;
+    z-index:2;
+    max-width:100%;
+    max-height:310px;
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    background:#fff;
+  }
+
+  .legenda-simulacao{
+    margin-top:12px;
+    font-size:13px;
+    color:#6c757d;
+    line-height:20px;
+  }
+
+  #btn_simular_cliente{
+    border-radius:50px;
+    min-height:52px;
+    font-size:18px;
+    font-weight:700;
+    box-shadow:0 10px 24px rgba(184,134,45,.18);
+  }
+
+  #mensagem_simulacao_cliente{
+    font-size:14px;
+    font-weight:600;
+    min-height:22px;
+  }
+
+  .selo-comparacao{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    background:#111;
+    color:#fff;
+    margin-bottom:10px;
+  }
+
+  @media (max-width:1000px){
+    .cards{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+  }
+
+  @media (max-width:991px){
+    .slider_section .carousel-item > div{
+      min-height:480px;
+    }
+
+    .slider_section #customCarouselProtese > .container{
+      top:0;
+      bottom:0;
+    }
+
+    .xp-grid{
+      grid-template-columns:1fr;
+      gap:24px;
+    }
+
+    .exp-stats{
+      grid-template-columns:repeat(2,1fr);
+    }
+
+    #modalSimulacaoCliente .modal-body{
+      padding:16px;
+    }
+
+    .box-imagem-simulacao{
+      min-height:260px;
+      margin-bottom:12px;
+    }
+
+    .box-imagem-simulacao img{
+      max-height:230px;
+    }
+
+    #btn_simular_cliente{
+      font-size:16px;
+    }
+  }
+
+  @media (max-width:768px){
+    .slider_section .detail-box{
+      margin-top:60px !important;
+    }
+
+    .slider_section .detail-box h2{
+      font-size:32px;
+      line-height:1.2;
+    }
+
+    .slider_section .detail-box p{
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .slider_section .carousel-control-prev,
+    .slider_section .carousel-control-next{
+      width:42px !important;
+      height:42px !important;
+    }
+
+    .xp-year{
+      font-size:min(30vw,140px);
+    }
+
+    .xp-subtitle{
+      font-size:22px;
+    }
+
+    .xp-title{
+      font-size:clamp(24px,8vw,38px);
+    }
+
+    .xp-desc{
+      font-size:16px;
+    }
+
+    .exp-stats{
+      grid-template-columns:1fr;
+    }
+
+    .xp-badges{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .cards{
+      grid-template-columns:1fr;
+    }
+  }

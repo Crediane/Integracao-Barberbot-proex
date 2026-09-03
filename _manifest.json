@@ -1,0 +1,18 @@
+{
+  "name": "Sistema Barbearia",
+  "short_name": "Barbearia",
+  "start_url": "/agendamentos.php",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/sistema/img/icone.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+RewriteEngine On
+Options -MultiViews
+RewriteBase /marketplace/
+
+RewriteRule ^_service-worker\.js$ app/_service-worker.js [L]
+
+
+# ==========================================================
+# FIX LOOP: remove ?loja=... quando a URL já é bonita /loja/<slug>/...
+# (Só executa se o querystring for APENAS loja repetido)
+# ==========================================================
+RewriteCond %{REQUEST_URI} ^/marketplace/loja/ [NC]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)(loja=[^&]+)(&loja=[^&]+)*$ [NC]
+RewriteRule ^(loja/.*)$ /marketplace/$1? [R=301,L,NE]
+
+# =============================
+# CANONICAL (TENANT) - PAINEL_CLIENTE
+# Força URL limpa: /loja/<slug>/painel_cliente/...
+# Remove acesso por /sistema/painel_cliente/?loja=<slug>
+# =============================
+
+# /sistema/painel_cliente ou /sistema/painel_cliente/index.php com ?loja=slug -> /loja/slug/painel_cliente/
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/painel_cliente/?$ /marketplace/loja/%2/painel_cliente/? [R=301,L,NE]
+
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/painel_cliente/index\.php$ /marketplace/loja/%2/painel_cliente/? [R=301,L,NE]
+
+# /sistema/painel_cliente/<pag> com ?loja=slug -> /loja/slug/painel_cliente/<pag>/
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/painel_cliente/(agendamentos|planos|receber)/?$ /marketplace/loja/%2/painel_cliente/$1/? [R=301,L,NE]
+
+# força barra final no painel_cliente do tenant
+RewriteRule ^loja/([a-z0-9_-]+)/painel_cliente$ /marketplace/loja/$1/painel_cliente/ [R=301,L,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/painel-cliente$ /marketplace/loja/$1/painel_cliente/ [R=301,L,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/painel_cliente/(agendamentos|planos|receber)$ /marketplace/loja/$1/painel_cliente/$2/ [R=301,L,NC]
+
+
+
+# =============================
+# CANONICAL (TENANT) - PROF (APP PAINEL)
+# Força URL limpa: /loja/<slug>/prof/painel/...
+# Remove acesso por /app/painel/?loja=<slug>
+# =============================
+
+# /app/painel ou /app/painel/index.php com ?loja=slug -> /loja/slug/prof/painel/
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^app/painel/?$ /marketplace/loja/%2/prof/painel/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^app/painel/index\.php$ /marketplace/loja/%2/prof/painel/? [R=301,L,NE]
+
+# /app/painel/<rota> com ?loja=slug -> /loja/slug/prof/painel/<rota>
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^app/painel/(.+)$ /marketplace/loja/%2/prof/painel/$1? [R=301,L,NE]
+
+# força barra final no painel do profissional
+RewriteRule ^loja/([a-z0-9_-]+)/prof/painel$ /marketplace/loja/$1/prof/painel/ [R=301,L,NC]
+
+
+# =============================
+# 4.1) PROF (APP PAINEL) - MULTI-TENANT
+# /loja/<slug>/prof/painel/...  => /app/painel/... (mantém contexto do tenant via ?loja=<slug>)
+# =============================
+
+# abre o painel do profissional com ?loja=<slug>
+RewriteRule ^loja/([a-z0-9_-]+)/prof/painel/?$ app/painel/index.php?loja=$1 [L,QSA,NC]
+
+# arquivos estáticos do painel do profissional (sem ?loja)
+RewriteRule ^loja/([a-z0-9_-]+)/prof/painel/(.+\.(?:css|js|mjs|png|jpg|jpeg|gif|svg|webp|ico|json|webmanifest|map|txt|woff|woff2|ttf|eot))$ app/painel/$2 [L,NC]
+
+# demais rotas internas do painel do profissional com ?loja (para o .htaccess interno do app/painel funcionar)
+RewriteRule ^loja/([a-z0-9_-]+)/prof/painel/(.+)$ app/painel/$2?loja=$1 [L,QSA,NC]
+
+
+# =============================
+# CANONICAL (TENANT) - SISTEMA + PAINEL + PÚBLICO
+# Força URL limpa /loja/<slug>/... quando cair em rotas antigas com ?loja=<slug>
+# =============================
+
+# /sistema ou /sistema/index.php com ?loja=slug -> /loja/slug/sistema/ (limpa querystring)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/?$ /marketplace/loja/%2/sistema/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/index\.php$ /marketplace/loja/%2/sistema/? [R=301,L,NE]
+
+# /sistema/painel com ?loja=slug -> /loja/slug/painel/ (limpa querystring)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/painel/?$ /marketplace/loja/%2/painel/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^sistema/painel/index\.php$ /marketplace/loja/%2/painel/? [R=301,L,NE]
+
+# Público (arquivos antigos) com ?loja=slug -> /loja/slug/<rota>/ (limpa querystring)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^agendamentos\.php$ /marketplace/loja/%2/agendamentos/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^meus-agendamentos\.php$ /marketplace/loja/%2/meus-agendamentos/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^servicos\.php$ /marketplace/loja/%2/servicos/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^produtos\.php$ /marketplace/loja/%2/produtos/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^assinatura\.php$ /marketplace/loja/%2/assinatura/? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^assinar\.php$ /marketplace/loja/%2/assinar/? [R=301,L,NE]
+
+# /cadastro-cliente.php com ?loja=slug -> /loja/slug/cadastro-cliente.php
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^cadastro-cliente\.php$ /marketplace/loja/%2/cadastro-cliente.php? [R=301,L,NE]
+
+# /cadastrar.php com ?loja=slug -> /loja/slug/cadastrar.php
+# Este é o endpoint usado pelo formulário rápido do rodapé.
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^cadastrar\.php$ /marketplace/loja/%2/cadastrar.php? [R=301,L,NE]
+
+
+# /duvidas.php e /comecar.php com ?loja=slug -> URL dinâmica da barbearia
+# Mantém o slug visível na URL e remove o parâmetro antigo.
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^duvidas\.php$ /marketplace/loja/%2/duvidas.php? [R=301,L,NE]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{QUERY_STRING} (^|&)loja=([a-z0-9_-]+)(&|$) [NC]
+RewriteRule ^comecar\.php$ /marketplace/loja/%2/comecar.php? [R=301,L,NE]
+
+
+# =============================
+# 1) SEGURANÇA
+# =============================
+<FilesMatch "\.(?:sql|env|log|ini|config|yml|yaml|bak|backup|old|orig|save|swp|tmp)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+<Files ".htaccess">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
+
+# =========================================================
+# 2) SE EXISTE ARQUIVO/PASTA, ENTREGA DIRETO (EXCETO /loja/)
+# =========================================================
+RewriteCond %{REQUEST_URI} !^/marketplace/loja/ [NC]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# =============================
+# 3) MARKETPLACE
+# =============================
+RewriteRule ^$ marketplace.php [L,QSA]
+RewriteRule ^marketplace/?$ marketplace.php [L,QSA]
+RewriteRule ^marketplace\.php/?$ marketplace.php [L,QSA]
+RewriteRule ^criar-barbearia/?$ criar-barbearia.php [L,QSA]
+RewriteRule ^provisionar_tenant\.php$ provisionar_tenant.php [L,QSA]
+RewriteRule ^finalizar_tenant\.php$ finalizar_tenant.php [L,QSA]
+RewriteRule ^sistema/bloqueio\.php$ sistema/bloqueio.php [L,QSA]
+
+# BarberBot - Retorno do pagamento do agendamento (Marketplace / Loja)
+RewriteRule ^loja/([^/]+)/agendamentos/pagamento/([0-9]+)/([0-9]+)/?$ loja/agendamentos/pagamento.php?loja=$1&id_agd=$2&chave=$3 [L,QSA,NC]
+RewriteRule ^loja/([^/]+)/agendamentos/pagamento/([0-9]+)/?$ loja/agendamentos/pagamento.php?loja=$1&id_agd=$2 [L,QSA,NC]
+
+
+# =============================
+# 4) MULTI-TENANT (LOJA)
+# =============================
+
+# =============================
+# 4.0) AJAX E ASSETS PÚBLICOS DO TENANT
+# /loja/<slug>/ajax/... => /ajax/... (mantém contexto do tenant via ?loja=<slug>)
+# Corrige chamadas como:
+# /loja/gilberto-gustavo/ajax/listar-cartoes.php
+# /loja/gilberto-gustavo/ajax/excluir.php
+# =============================
+RewriteRule ^loja/([a-z0-9_-]+)/ajax/(.+\.php)$ ajax/$2?loja=$1 [L,QSA,NC]
+
+# Assets públicos chamados de dentro da URL bonita /loja/<slug>/...
+# Evita 404/MIME text/html em arquivos relativos como /loja/<slug>/js/custom.js
+RewriteRule ^loja/([a-z0-9_-]+)/(js|css|fonts|fontes|plugins|vendor|vendors|assets)/(.+)$ $2/$3 [L,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/images/(.+)$ images/$2 [L,NC]
+
+# ✅ NÃO redireciona /loja/<slug>/ para /sistema/ (mantém site público da loja)
+RewriteRule ^loja/([a-z0-9_-]+)/?$ home\.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/index\.php$ home.php?loja=$1 [L,QSA,NC]
+
+RewriteRule ^loja/?$ marketplace.php [L,QSA,NC]
+RewriteRule ^loja/index\.php$ marketplace.php [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/sistema/bloqueio\.php$ sistema/bloqueio.php?loja=$1 [L,QSA,NC]
+
+# /loja/images/... -> /images/...
+RewriteRule ^loja/images/(.+)$ images/$1 [L,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/img/(.+)$ sistema/img/$2 [L,NC]
+
+
+# =============================
+# 4.1) APP DO CLIENTE (AGENDAMENTO)
+# /loja/<slug>/agendar e /loja/<slug>/agendamentos => /agendamentos.php?loja=<slug>
+# =============================
+
+# cadastro público do cliente
+RewriteRule ^loja/([a-z0-9_-]+)/cadastro-cliente\.php$ cadastro-cliente.php?loja=$1 [L,QSA,NC]
+
+# cadastro rápido do rodapé
+RewriteRule ^loja/([a-z0-9_-]+)/cadastrar\.php$ cadastrar.php?loja=$1 [L,QSA,NC]
+
+# app do cliente aponta pro agendamentos (mantém URL pública do cliente)
+# compatibilidade: se digitar /agendamento sem o "s", abre a mesma agenda da loja
+RewriteRule ^loja/([a-z0-9_-]+)/agendamento/?$ agendamentos.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/agendar/?$ agendamentos.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/agendamentos/?$ agendamentos.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/meus-agendamentos/?$ meus-agendamentos.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/meus-agendamentos\.php$ meus-agendamentos.php?loja=$1 [L,QSA,NC]
+
+RewriteRule ^loja/([a-z0-9_-]+)/?$ home.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/home/?$ home.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/index/?$ home.php?loja=$1 [L,QSA,NC]
+
+RewriteRule ^loja/([a-z0-9_-]+)/servicos/?$ servicos.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/assinatura/?$ assinatura.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/assinar/?$ assinar.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/produtos/?$ produtos.php?loja=$1 [L,QSA,NC]
+
+
+# Tutoriais, dúvidas e cadastro assistido por barbearia.
+# A URL pública mantém /loja/<slug>/ e o PHP recebe ?loja=<slug>
+# para o conexao.php resolver exclusivamente o banco individual do tenant.
+RewriteRule ^loja/([a-z0-9_-]+)/duvidas\.php$ duvidas.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/comecar\.php$ comecar.php?loja=$1 [L,QSA,NC]
+
+# =============================
+# 4.2) APP / PWA DO PROFISSIONAL (PASTA /app)
+# /loja/<slug>/app/... e /loja/<slug>/prof/...
+# =============================
+
+# força barra final no alias /app
+RewriteCond %{THE_REQUEST} \s/+loja/([a-z0-9_-]+)/app[\s?] [NC]
+RewriteRule ^loja/([a-z0-9_-]+)/app$ loja/$1/app/ [R=302,L,NC]
+
+# força barra final no alias /prof (compatibilidade)
+RewriteCond %{THE_REQUEST} \s/+loja/([a-z0-9_-]+)/prof[\s?] [NC]
+RewriteRule ^loja/([a-z0-9_-]+)/prof$ loja/$1/prof/ [R=302,L,NC]
+
+# abre o PWA (index) com ?loja=<slug> nos dois aliases
+RewriteRule ^loja/([a-z0-9_-]+)/(app|prof)/?$ app/index.php?loja=$1 [L,QSA,NC]
+
+# assets do app SEM ?loja (service worker / cache)
+RewriteRule ^loja/([a-z0-9_-]+)/(app|prof)/(.+\.(?:css|js|mjs|png|jpg|jpeg|gif|svg|webp|ico|json|map|txt|woff|woff2|ttf))$ app/$3 [L,NC]
+
+# rotas internas do app com ?loja
+RewriteRule ^loja/([a-z0-9_-]+)/(app|prof)/(.+)$ app/$3?loja=$1 [L,QSA,NC]
+
+# =============================
+# 4.3) LOGIN DO TENANT
+# /loja/<slug>/sistema/...
+# =============================
+RewriteRule ^loja/([a-z0-9_-]+)/sistema/?$ sistema/index.php?loja=$1 [L,QSA,NC]
+
+# assets do sistema (sem ?loja)
+RewriteRule ^loja/([a-z0-9_-]+)/sistema/(.+\.(?:css|js|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|map))$ sistema/$2 [L,NC]
+
+# resto do sistema (com ?loja)
+RewriteRule ^loja/([a-z0-9_-]+)/sistema/(.+)$ sistema/$2?loja=$1 [L,QSA,NC]
+
+# =============================
+# 4.4) PAINEL DO TENANT
+# /loja/<slug>/painel/...
+# =============================
+RewriteRule ^loja/([a-z0-9_-]+)/painel/?$ sistema/painel/index.php?loja=$1 [L,QSA,NC]
+
+# assets do painel (sem ?loja)
+RewriteRule ^loja/([a-z0-9_-]+)/painel/(.+\.(?:css|js|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|map))$ sistema/painel/$2 [L,NC]
+
+# resto do painel (com ?loja)
+RewriteRule ^loja/([a-z0-9_-]+)/painel/(.+)$ sistema/painel/$2?loja=$1 [L,QSA,NC]
+
+
+# =============================
+# 4.4.1) PAINEL DO CLIENTE (TENANT)
+# /loja/<slug>/painel_cliente/...
+# OBS: páginas (agendamentos/planos/receber) vão para index.php?pag=...
+# =============================
+
+# raiz do painel_cliente
+RewriteRule ^loja/([a-z0-9_-]+)/painel_cliente/?$ sistema/painel_cliente/index.php?loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/painel-cliente/?$ sistema/painel_cliente/index.php?loja=$1 [L,QSA,NC]
+
+# páginas do menu (sem arquivo físico)
+RewriteRule ^loja/([a-z0-9_-]+)/(?:painel_cliente|painel-cliente)/(agendamentos|planos|receber)/?$ sistema/painel_cliente/index.php?loja=$1&pag=$2 [L,QSA,NC]
+
+# assets do painel_cliente (sem ?loja)
+RewriteRule ^loja/([a-z0-9_-]+)/(?:painel_cliente|painel-cliente)/(.*\.(?:css|js|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot|map))$ sistema/painel_cliente/$2 [L,NC]
+
+# resto do painel_cliente (com ?loja) - inclui AJAX e arquivos dentro de /paginas/
+RewriteRule ^loja/([a-z0-9_-]+)/(?:painel_cliente|painel-cliente)/(.+)$ sistema/painel_cliente/$2?loja=$1 [L,QSA,NC]
+
+# =============================
+# 4.5) PAGAMENTOS MULTI-TENANT (COM SLUG)
+# =============================
+
+# ASAAS
+
+# ==========================================================
+# BarberBot Marketplace - Pagamentos dentro de /loja/<slug>/pagamentos/
+# Ex.: /loja/jacy-cabeleireiro/pagamentos/pagamento_aprovado.php?id_agd=195
+# vira: /pagamentos/pagamento_aprovado.php?loja=jacy-cabeleireiro&id_agd=195
+# ==========================================================
+RewriteRule ^loja/([a-z0-9_-]+)/pagamentos/(.+)$ pagamentos/$2?loja=$1 [L,QSA,NC]
+
+RewriteRule ^loja/([a-z0-9_-]+)/pagar_asaas/([^/]+)/?$ asaas/index.php?id_conta=$2&loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/pagamento_asaas/([^/]+)/([^/]+)/?$ asaas/index.php?id_conta=$2&total=$3&loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/plano_asaas/([^/]+)/?$ asaas_planos/index.php?id_conta=$2&loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/conta_asaas/([^/]+)/?$ asaas_contas/index.php?id_conta=$2&loja=$1 [L,QSA,NC]
+
+# PAGAMENTOS (antigo)
+RewriteRule ^loja/([a-z0-9_-]+)/pagar/([^/]+)/?$ pagamentos/index.php?id_conta=$2&loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/pagamento/([^/]+)/([^/]+)/?$ pagamentos/index.php?id_conta=$2&total=$3&loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/plano/([^/]+)/?$ pagamentos/pagar.php?id_conta=$2&loja=$1 [L,QSA,NC]
+RewriteRule ^loja/([a-z0-9_-]+)/conta/([^/]+)/?$ pagamentos/receber.php?id_conta=$2&loja=$1 [L,QSA,NC]
+
+# =============================
+# 5) ROTAS ANTIGAS (mantidas)
+# =============================
+RewriteRule ^agendamento/?$ agendamentos.php [L,QSA]
+RewriteRule ^agendamentos/?$ agendamentos.php [L,QSA]
+RewriteRule ^produtos/?$ produtos.php [L,QSA]
+RewriteRule ^servicos/?$ servicos.php [L,QSA]
+RewriteRule ^assinatura/?$ assinatura.php [L,QSA]
+RewriteRule ^assinar/?$ assinar.php [L,QSA]
+
+RewriteRule ^sistema/acesso/?$ sistema/acesso.php [L,QSA]
+RewriteRule ^barbearia/?$ barbearia.php [L,QSA]
+RewriteRule ^corte-cabelo/?$ corte-cabelo.php [L,QSA]
+RewriteRule ^protese/?$ protese.php [L,QSA]
+RewriteRule ^cadastro-cliente\.php$ cadastro-cliente.php [L,QSA]
+RewriteRule ^bio/?$ bio.php [L,QSA]
+
+# pagamentos antigos (sem slug)
+RewriteRule ^pagar_asaas/(.*)$ asaas/index.php?id_conta=$1 [L,QSA]
+RewriteRule ^pagamento_asaas/(.*)/(.*)$ asaas/index.php?id_conta=$1&total=$2 [L,QSA]
+RewriteRule ^plano_asaas/(.*)$ asaas_planos/index.php?id_conta=$1 [L,QSA]
+RewriteRule ^conta_asaas/(.*)$ asaas_contas/index.php?id_conta=$1 [L,QSA]
+
+RewriteRule ^pagar/(.*)$ pagamentos/index.php?id_conta=$1 [L,QSA]
+RewriteRule ^pagamento/(.*)/(.*)$ pagamentos/index.php?id_conta=$1&total=$2 [L,QSA]
+RewriteRule ^plano/(.*)$ pagamentos/pagar.php?id_conta=$1 [L,QSA]
+RewriteRule ^conta/(.*)$ pagamentos/receber.php?id_conta=$1 [L,QSA]
+
+# =============================
+# 6) CACHE, COMPRESSÃO E HEADERS - PAGESPEED
+# Mantém as rotas existentes e melhora entrega de arquivos estáticos.
+# Não cacheia PHP/HTML dinâmico para não interferir em login, painel, agenda e pagamentos.
+# =============================
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType image/svg+xml .svg .svgz
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+  AddType video/mp4 .mp4
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# Compressão GZIP para HTML, CSS, JS, JSON, XML e SVG.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/atom+xml
+  AddOutputFilterByType DEFLATE application/manifest+json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Compressão Brotli quando disponível no servidor.
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/plain
+  AddOutputFilterByType BROTLI_COMPRESS text/html
+  AddOutputFilterByType BROTLI_COMPRESS text/xml
+  AddOutputFilterByType BROTLI_COMPRESS text/css
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json
+  AddOutputFilterByType BROTLI_COMPRESS application/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/atom+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/manifest+json
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+# Validade de cache por tipo de arquivo.
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # CSS e JavaScript: cache longo para PageSpeed.
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+
+  # Imagens e ícones.
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fontes.
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+  # Vídeos usados nas demonstrações.
+  ExpiresByType video/mp4 "access plus 1 year"
+
+  # Manifest e JSON mudam com mais frequência.
+  ExpiresByType application/json "access plus 7 days"
+  ExpiresByType application/manifest+json "access plus 7 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Segurança básica, sem alterar funcionamento do sistema.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Remove validação desnecessária em estáticos com cache longo.
+  <FilesMatch "\.(?:css|js|mjs|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|eot|mp4)$">
+    Header unset ETag
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Manifest/JSON: cache moderado para não travar atualização de PWA/configuração.
+  <FilesMatch "\.(?:json|webmanifest)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  # Service worker nunca deve ficar preso em cache longo.
+  <FilesMatch "(?:^|/)(?:_service-worker|service-worker|sw)\.js$">
+    Header unset ETag
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_flag display_errors On
+   php_value max_execution_time 300
+   php_value max_input_time -1
+   php_value max_input_vars 1000
+   php_value memory_limit 800M
+   php_value post_max_size 800M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 800M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors On
+   php_value max_execution_time 300
+   php_value max_input_time -1
+   php_value max_input_vars 1000
+   php_value memory_limit 800M
+   php_value post_max_size 800M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 800M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Defina o pacote “ea-php82” como a linguagem padrão de programação “PHP”.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

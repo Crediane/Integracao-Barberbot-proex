@@ -1,0 +1,467 @@
+.sub_page .hero_area {
+		min-height: auto;
+	}
+
+	.assinatura-corte-cabelo-page {
+		background: #0a0a0c;
+		color: #ffffff;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		padding-bottom: 40px;
+	}
+
+	.assinatura-corte-cabelo-page .section-title {
+		color: #ffffff !important;
+	}
+
+	.assinatura-corte-cabelo-topo {
+		text-align: center;
+		padding: 60px 0 40px;
+		background: #0a0a0c;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.assinatura-corte-cabelo-topo h1 {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		color: #e5c158;
+		letter-spacing: 2px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+
+	.assinatura-corte-cabelo-topo h2 {
+		font-size: 2.5rem;
+		font-weight: 800;
+		color: #ffffff;
+		margin: 0;
+	}
+
+	.assinatura-corte-cabelo-split-section {
+		padding: 50px 0;
+		background: #0d0d11;
+	}
+
+	.assinatura-corte-cabelo-card-vendas {
+		background: #121216;
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 16px;
+		padding: 35px;
+		height: 100%;
+		box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+	}
+
+	.assinatura-corte-cabelo-card-vendas h3 {
+		color: #e5c158;
+		font-size: 1.4rem;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.assinatura-corte-cabelo-card-vendas p {
+		color: #cccccc;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		margin-bottom: 25px;
+	}
+
+	.assinatura-corte-cabelo-vantagens {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 30px;
+	}
+
+	.assinatura-corte-cabelo-vantagens li {
+		position: relative;
+		padding-left: 28px;
+		margin-bottom: 14px;
+		color: #e0e0e0;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.assinatura-corte-cabelo-vantagens li:before {
+		content: '✓';
+		color: #e5c158;
+		font-weight: 900;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.assinatura-corte-cabelo-btn-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 50px;
+		padding: 12px 28px;
+		border-radius: 8px;
+		font-weight: 700;
+		text-decoration: none !important;
+		background: linear-gradient(135deg, #e5c158, #c49a29);
+		color: #000000 !important;
+		box-shadow: 0 6px 20px rgba(229,193,88,0.2);
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.assinatura-corte-cabelo-btn-cta:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 10px 25px rgba(229,193,88,0.3);
+	}
+
+	.assinatura-corte-cabelo-card-carrossel {
+		background: #121216;
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 16px;
+		padding: 20px;
+		height: 100%;
+		box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.assinatura-corte-cabelo-portfolio-midia {
+		background: #000000;
+		aspect-ratio: 16 / 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		border-radius: 12px;
+	}
+
+	.assinatura-corte-cabelo-portfolio-midia img,
+	.assinatura-corte-cabelo-portfolio-midia video,
+	.assinatura-corte-cabelo-portfolio-midia iframe {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		border: 0;
+	}
+
+	.assinatura-corte-cabelo-portfolio-conteudo {
+		padding: 20px 10px 5px;
+	}
+
+	.assinatura-corte-cabelo-portfolio-conteudo h4 {
+		color: #ffffff;
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin: 0 0 8px;
+	}
+
+	.assinatura-corte-cabelo-portfolio-conteudo p {
+		color: #aaaaaa;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.assinatura-corte-cabelo-carousel-controls .carousel-control-prev,
+	.assinatura-corte-cabelo-carousel-controls .carousel-control-next {
+		width: 44px;
+		height: 44px;
+		background: rgba(229,193,88,0.2);
+		border: 1px solid rgba(229,193,88,0.3);
+		border-radius: 50%;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 0.8;
+		transition: all 0.3s ease;
+	}
+
+	.assinatura-corte-cabelo-carousel-controls .carousel-control-prev:hover,
+	.assinatura-corte-cabelo-carousel-controls .carousel-control-next:hover {
+		background: rgba(229,193,88,0.8);
+		color: #000000;
+		opacity: 1;
+	}
+
+	.assinatura-corte-cabelo-planos {
+		background: #0a0a0c;
+		padding: 60px 0;
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item {
+		height: 100%;
+		background: #121216;
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid rgba(255,255,255,0.06);
+		box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		transition: all 0.3s ease;
+		padding-bottom: 25px;
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item:hover {
+		transform: translateY(-5px);
+		border-color: rgba(229,193,88,0.3);
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item .header {
+		background: linear-gradient(180deg, #181820 0%, #121216 100%);
+		padding: 30px 20px;
+		text-align: center;
+		border-bottom: 1px solid rgba(255,255,255,0.04);
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item .features {
+		padding: 24px;
+		flex-grow: 1;
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item .features li {
+		list-style: none;
+		position: relative;
+		padding-left: 24px;
+		margin-bottom: 12px;
+		color: #cccccc;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		text-align: left;
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item .features li:before {
+		content: '✓';
+		color: #e5c158;
+		font-weight: 900;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.assinatura-corte-cabelo-planos .btn-custom {
+		background: linear-gradient(135deg, #e5c158, #c49a29) !important;
+		color: #000000 !important;
+		border: 0 !important;
+		border-radius: 8px !important;
+		font-weight: 700 !important;
+		width: 100%;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.assinatura-corte-cabelo-planos .pricing--item .action {
+		padding: 0 24px;
+	}
+
+	.assinatura-corte-cabelo-pendente {
+		background: #181820;
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 12px;
+		padding: 20px;
+		color: #cccccc;
+		text-align: center;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 767px) {
+		.assinatura-corte-cabelo-topo {
+			padding: 40px 0 25px;
+		}
+
+		.assinatura-corte-cabelo-topo h2 {
+			font-size: 1.8rem;
+		}
+
+		.assinatura-corte-cabelo-btn-cta {
+			width: 100%;
+		}
+	}
+
+.assinatura-corte-cabelo-pendente-card {
+	margin-bottom: 24px;
+	text-align: left;
+}
+
+
+/* Correção do carrossel da assinatura de prótese: funciona mesmo quando o Bootstrap JS não inicializa. */
+.assinatura-corte-cabelo-card-carrossel .carousel {
+	position: relative;
+	width: 100%;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-item {
+	display: none;
+	width: 100%;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-item.active {
+	display: block;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-prev,
+.assinatura-corte-cabelo-card-carrossel .carousel-control-next {
+	position: absolute;
+	z-index: 20;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none !important;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-prev {
+	left: 12px;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-next {
+	right: 12px;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-prev-icon,
+.assinatura-corte-cabelo-card-carrossel .carousel-control-next-icon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border-top: 4px solid #ffffff;
+	border-right: 4px solid #ffffff;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-prev-icon {
+	transform: rotate(-135deg);
+	margin-left: 5px;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-next-icon {
+	transform: rotate(45deg);
+	margin-right: 5px;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-control-prev:hover .carousel-control-prev-icon,
+.assinatura-corte-cabelo-card-carrossel .carousel-control-next:hover .carousel-control-next-icon {
+	border-color: #000000;
+}
+
+.assinatura-corte-cabelo-portfolio-conteudo {
+	max-height: 190px;
+	overflow: auto;
+}
+
+
+.assinatura-corte-cabelo-card-carrossel .carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-item {
+	display: none;
+}
+
+.assinatura-corte-cabelo-card-carrossel .carousel-item.active {
+	display: block;
+}
+
+
+/* Correção dos cards de planos: contraste, proporção e campos não incluídos. */
+.assinatura-corte-cabelo-planos .pricing--section,
+.assinatura-corte-cabelo-planos .pricing--section .container,
+.assinatura-corte-cabelo-planos .pricing--section .row {
+	background: transparent !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item {
+	background: #111116 !important;
+	border: 1px solid rgba(229, 193, 88, 0.22) !important;
+	min-height: 100% !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .header {
+	min-height: 190px !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: center !important;
+	background: linear-gradient(180deg, #332817 0%, #17110a 100%) !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features {
+	background: #ffffff !important;
+	color: #242424 !important;
+	padding: 28px 28px 12px !important;
+	min-height: 300px !important;
+	flex-grow: 1 !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features ul {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features li {
+	position: relative !important;
+	list-style: none !important;
+	padding: 13px 14px 13px 42px !important;
+	margin: 0 0 10px !important;
+	font-size: 1rem !important;
+	line-height: 1.45 !important;
+	text-align: left !important;
+	border-radius: 0 !important;
+	background: #f3f3f3 !important;
+	color: #333333 !important;
+	font-weight: 600 !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features li:nth-child(odd) {
+	background: #ffffff !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features li.incluido:before {
+	content: '✓' !important;
+	position: absolute !important;
+	left: 13px !important;
+	top: 13px !important;
+	color: #c49a29 !important;
+	font-weight: 900 !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features li.nao-incluido {
+	color: #777777 !important;
+	background: #f7f7f7 !important;
+	font-weight: 500 !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .features li.nao-incluido:before {
+	content: '×' !important;
+	position: absolute !important;
+	left: 14px !important;
+	top: 12px !important;
+	color: #b6b6b6 !important;
+	font-weight: 900 !important;
+	font-size: 1.1rem !important;
+}
+
+.assinatura-corte-cabelo-planos .pricing--item .action {
+	background: #ffffff !important;
+	padding: 0 28px 30px !important;
+	margin-top: auto !important;
+}
+
+.assinatura-corte-cabelo-planos .btn-custom {
+	min-height: 52px !important;
+	box-shadow: 0 10px 24px rgba(196, 154, 41, 0.24) !important;
+}
+
+@media (max-width: 991px) {
+	.assinatura-corte-cabelo-planos .pricing--item .features {
+		min-height: auto !important;
+	}
+}

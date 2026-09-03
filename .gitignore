@@ -1,0 +1,115 @@
+﻿# Credenciais e configurações privadas
+.env
+.env.*
+!.env.example
+config/secrets.php
+config/*_local.php
+
+# Dependências
+vendor/
+**/vendor/
+node_modules/
+**/node_modules/
+
+# Arquivos temporários e logs
+*.log
+error_log
+logs/
+**/logs/
+cache/
+tmp/
+
+# Arquivos compactados
+*.zip
+*.rar
+*.7z
+
+# Chaves e credenciais
+*.key
+*.pem
+credentials.json
+service-account.json
+
+# Uploads dos usuários
+uploads/*
+!uploads/.gitkeep
+
+# Bancos de produção
+*.sql
+
+# Permite somente o banco acadêmico limpo
+!database/jctecbr_master_faculdade_api_limpo.sql
+
+# Sessões e registros temporários de webhook
+webhook/sessions/
+webhook/webhook_dedupe/
+
+# Dependências
+vendor/
+**/vendor/
+node_modules/
+**/node_modules/
+
+# Logs e arquivos temporários
+logs/
+**/logs/
+*.log
+error_log
+cache/
+tmp/
+
+# Arquivos privados
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+service-account.json
+
+# Arquivos compactados
+*.zip
+*.rar
+*.7z
+
+# Uploads locais
+uploads/*
+!uploads/.gitkeep
+
+# Sessões e registros temporários de webhook
+webhook/sessions/
+webhook/webhook_dedupe/
+
+# Dependências
+vendor/
+**/vendor/
+node_modules/
+**/node_modules/
+
+# Logs e arquivos temporários
+logs/
+**/logs/
+*.log
+error_log
+cache/
+tmp/
+
+# Arquivos privados
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+service-account.json
+
+# Arquivos compactados
+*.zip
+*.rar
+*.7z
+
+# Uploads locais
+uploads/*
+!uploads/.gitkeep
+
+webhook/*_debug.txt

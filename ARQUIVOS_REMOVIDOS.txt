@@ -1,0 +1,17 @@
+BASE ACADÊMICA PARA IMPLANTAÇÃO DAS APIs
+
+Foram retirados da versão pública:
+- Credenciais, tokens, chaves, .env e arquivos de verificação privados.
+- Implementação do Mercado Pago e rotinas de webhook/cobrança externa.
+- Implementação de API/automação do WhatsApp e respectivos webhooks/crons.
+- Tags e IDs ativos de Google Ads e Meta Pixel.
+- Módulos Asaas encontrados no projeto.
+- Dumps com registros reais, logs, uploads, imagens de clientes, caches e mídias pesadas.
+
+Foi preservado:
+- sistema/conexao.php e a lógica MASTER x TENANT.
+- Estrutura principal do sistema, telas, rotas e módulos não relacionados às quatro integrações.
+- SQL somente de estrutura em database/jctecbr_master_estrutura.sql.
+
+Os integrantes devem recriar as integrações usando variáveis locais baseadas em .env.example.
+Nunca enviar o arquivo .env real ao GitHub.

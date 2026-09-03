@@ -1,0 +1,87 @@
+Options -MultiViews
+RewriteEngine On
+
+# ✅ NÃO fixe RewriteBase aqui (precisa funcionar em /sistema/painel e /loja/<slug>/painel)
+# RewriteBase /sistema/painel/
+
+# não reescrever o próprio index.php
+RewriteRule ^index\.php$ - [L]
+
+
+
+# não reescrever arquivos/pastas reais
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# home
+RewriteRule ^$ index.php [L,QSA]
+
+RewriteRule ^meus-agendamentos(.*)$ index.php?pag=meus-agendamentos [L,QSA]
+RewriteRule ^grupos_disparos(.*)$   index.php?pag=grupos_disparos     [L,QSA]
+RewriteRule ^whatsapp(.*)$          index.php?pag=whatsapp$1          [L,QSA]
+RewriteRule ^comanda(.*)$           index.php?pag=comanda             [L,QSA]
+RewriteRule ^usuarios(.*)$          index.php?pag=usuarios            [L,QSA]
+RewriteRule ^funcionarios(.*)$      index.php?pag=funcionarios        [L,QSA]
+RewriteRule ^marketplace_diagnostico/?$ index.php?pag=marketplace_diagnostico [L,QSA]
+RewriteRule ^marketplace(.*)$       index.php?pag=marketplace         [L,QSA]
+
+RewriteRule ^clientes_retorno(.*)$  index.php?pag=clientes_retorno    [L,QSA]
+RewriteRule ^clientes(.*)$          index.php?pag=clientes            [L,QSA]
+
+RewriteRule ^fornecedores(.*)$      index.php?pag=fornecedores        [L,QSA]
+RewriteRule ^receber_vencidas(.*)$  index.php?pag=receber_vencidas    [L,QSA]
+
+RewriteRule ^cargos(.*)$            index.php?pag=cargos              [L,QSA]
+RewriteRule ^cat_servicos(.*)$      index.php?pag=cat_servicos        [L,QSA]
+RewriteRule ^grupos(.*)$            index.php?pag=grupos              [L,QSA]
+RewriteRule ^acessos(.*)$           index.php?pag=acessos             [L,QSA]
+RewriteRule ^pgto(.*)$              index.php?pag=pgto                [L,QSA]
+RewriteRule ^produtos(.*)$          index.php?pag=produtos            [L,QSA]
+RewriteRule ^cat_produtos(.*)$      index.php?pag=cat_produtos        [L,QSA]
+RewriteRule ^estoque(.*)$           index.php?pag=estoque             [L,QSA]
+RewriteRule ^saidas(.*)$            index.php?pag=saidas              [L,QSA]
+RewriteRule ^entradas(.*)$          index.php?pag=entradas            [L,QSA]
+RewriteRule ^vendas(.*)$            index.php?pag=vendas              [L,QSA]
+RewriteRule ^compras(.*)$           index.php?pag=compras             [L,QSA]
+RewriteRule ^pagar(.*)$             index.php?pag=pagar               [L,QSA]
+RewriteRule ^receber(.*)$           index.php?pag=receber             [L,QSA]
+RewriteRule ^comissoes(.*)$         index.php?pag=comissoes           [L,QSA]
+
+RewriteRule ^agendamentos(.*)$      index.php?pag=agendamentos        [L,QSA]
+RewriteRule ^servicos_agenda(.*)$   index.php?pag=servicos_agenda     [L,QSA]
+RewriteRule ^marketing(.*)$         index.php?pag=marketing           [L,QSA]
+RewriteRule ^cobrancas(.*)$         index.php?pag=cobrancas           [L,QSA]
+RewriteRule ^pagas(.*)$             index.php?pag=pagas               [L,QSA]
+RewriteRule ^textos_index(.*)$      index.php?pag=textos_index        [L,QSA]
+RewriteRule ^comentarios(.*)$       index.php?pag=comentarios         [L,QSA]
+RewriteRule ^agenda(.*)$            index.php?pag=agenda              [L,QSA]
+RewriteRule ^meus_servicos(.*)$     index.php?pag=meus_servicos       [L,QSA]
+RewriteRule ^minhas_comissoes(.*)$  index.php?pag=minhas_comissoes    [L,QSA]
+
+RewriteRule ^dias_bloqueio_func(.*)$ index.php?pag=dias_bloqueio_func [L,QSA]
+RewriteRule ^dias_bloqueio(.*)$      index.php?pag=dias_bloqueio      [L,QSA]
+RewriteRule ^dias(.*)$               index.php?pag=dias               [L,QSA]
+RewriteRule ^servicos_func(.*)$      index.php?pag=servicos_func      [L,QSA]
+
+RewriteRule ^servicos(.*)$           index.php?pag=servicos           [L,QSA]
+RewriteRule ^calendario(.*)$         index.php?pag=calendario         [L,QSA]
+RewriteRule ^configuracoes(.*)$      index.php?pag=configuracoes      [L,QSA]
+RewriteRule ^caixas(.*)$             index.php?pag=caixas             [L,QSA]
+RewriteRule ^assinaturas(.*)$        index.php?pag=assinaturas        [L,QSA]
+RewriteRule ^planos(.*)$             index.php?pag=planos             [L,QSA]
+RewriteRule ^frequencias(.*)$        index.php?pag=frequencias        [L,QSA]
+RewriteRule ^dispositivos(.*)$       index.php?pag=dispositivos       [L,QSA]
+
+RewriteRule ^foto_admin(.*)$         index.php?pag=foto_admin         [L,QSA]
+RewriteRule ^duvidas(.*)$            index.php?pag=duvidas            [L,QSA]
+RewriteRule ^anotacoes(.*)$          index.php?pag=anotacoes          [L,QSA]
+RewriteRule ^faq(.*)$                index.php?pag=faq                [L,QSA]
+RewriteRule ^bio(.*)$                index.php?pag=bio                [L,QSA]
+RewriteRule ^avaliacoes(.*)$         index.php?pag=avaliacoes         [L,QSA]
+RewriteRule ^proteses(.*)$           index.php?pag=proteses           [L,QSA]
+RewriteRule ^manutencoes(.*)$        index.php?pag=manutencoes        [L,QSA]
+RewriteRule ^analises(.*)$           index.php?pag=analises           [L,QSA]
+RewriteRule ^simulador(.*)$          index.php?pag=simulador          [L,QSA]
+RewriteRule ^seo(.*)$                index.php?pag=seo                [L,QSA]
+RewriteRule ^site(.*)$               index.php?pag=site               [L,QSA]
