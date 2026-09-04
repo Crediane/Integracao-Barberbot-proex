@@ -1,49 +1,38 @@
 <?php
-// 1. Recebe os dados brutos e transforma em um formato que o PHP entende (Array)
 $json_recebido = file_get_contents('php://input');
 $dados = json_decode($json_recebido, true);
 
-// Mantém o bloco de notas gravando para você espiar depois
-file_put_contents('log_whatsapp.txt', $json_recebido . PHP_EOL, FILE_APPEND);
-
-// 2. Verifica se chegou uma mensagem válida e lê os dados
 if (isset($dados['data']['key']['remoteJid'])) {
     
-    $fromMe = $dados['data']['key']['fromMe']; // É o robô falando? (true ou false)
-    $numero_remetente = $dados['data']['key']['remoteJid']; // Número do cliente + @s.whatsapp.net
-    $texto_recebido = $dados['data']['message']['conversation'] ?? ''; // O texto que o cliente digitou
+    $fromMe = $dados['data']['key']['fromMe']; 
+    $numero_remetente = $dados['data']['key']['remoteJid']; 
+    $texto_recebido = trim($dados['data']['message']['conversation'] ?? '');
 
-    // 3. REGRA DE OURO: O robô só responde se a mensagem NÃO for dele mesmo e não for vazia
     if (!$fromMe && !empty($texto_recebido)) {
         
-        // Limpa o número (tira o "@s.whatsapp.net" para a API aceitar)
         $numero_limpo = str_replace('@s.whatsapp.net', '', $numero_remetente);
+        
+        // 1. Salva a sessão com a hora da última mensagem
+        $nova_sessao = ['ultimo_contato' => time()];
+        file_put_contents('sessao_' . $numero_limpo . '.json', json_encode($nova_sessao));
+        
+        // 2. Lógica do Menu
+        switch ($texto_recebido) {
+            case '1': $resposta_texto = "📅 Você escolheu *Agendar um Horário*!"; break;
+            case '2': $resposta_texto = "✂️ Você escolheu *Ver Meus Agendamentos*!"; break;
+            case '3': $resposta_texto = "📍 *Nosso Endereço:* Rua da Barbearia, 123."; break;
+            default:  $resposta_texto = "Olá! Bem-vindo ao *BarberBot*! 💈\nDigite:\n*1.* Agendar\n*2.* Meus Agendamentos\n*3.* Endereço"; break;
+        }
 
-        // 4. A inteligência do bot (A resposta que ele vai dar)
-        $resposta_texto = "🤖 Olá! Eu sou o BarberBot. Você acabou de me dizer: *" . $texto_recebido . "*";
-
-        // 5. Envia a resposta de volta (O mesmo código do teste_envio.php)
-        $url = "http://127.0.0.1:8080/message/sendText/MeuBotPHP";
-        $apikey = "BarberBot123";
-
-        $dados_envio = [
-            "number" => $numero_limpo,
-            "text" => $resposta_texto
-        ];
-
-        $ch = curl_init($url);
+        // 3. Envia a resposta
+        $ch = curl_init("http://127.0.0.1:8080/message/sendText/MeuBotPHP");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados_envio));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            "apikey: " . $apikey,
-            "Content-Type: application/json"
-        ]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(["number" => $numero_limpo, "text" => $resposta_texto]));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ["apikey: BarberBot123", "Content-Type: application/json"]);
         curl_exec($ch);
         curl_close($ch);
     }
 }
-
-// 6. Retorna o sinal verde para a API saber que deu tudo certo
 http_response_code(200);
 ?>
