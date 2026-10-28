@@ -1,0 +1,1122 @@
+/* ============================================================
+   CSS específico da página de Prótese Capilar
+   Todo o CSS que estava no protese.php foi centralizado aqui.
+   ============================================================ */
+  /* ============================================================
+     PATCH V8 - banner fixo e rodapé estável
+     Não altera consultas, formulários, banco, links ou conexão.
+     ============================================================ */
+  .footer_section .container{width:100%;max-width:1140px;margin-right:auto;margin-left:auto;padding-right:15px;padding-left:15px;}
+  .footer_section .row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;}
+  .footer_section [class*="col-"]{position:relative;width:100%;padding-right:15px;padding-left:15px;}
+  .footer_section .form-control{display:block;width:100%;height:calc(1.5em + .75rem + 2px);padding:.375rem .75rem;font-size:1rem;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem;}
+  .footer_section .btn{display:inline-block;font-weight:700;text-align:center;vertical-align:middle;cursor:pointer;border:1px solid transparent;padding:.55rem .85rem;border-radius:.25rem;}
+  .footer_section .btn-block{display:block;width:100%;}
+  @media (min-width:768px){.footer_section .col-md-5{flex:0 0 41.666667%;max-width:41.666667%;}.footer_section .col-md-6{flex:0 0 50%;max-width:50%;}.footer_section .col-md-7{flex:0 0 58.333333%;max-width:58.333333%;}}
+  @media (min-width:992px){.footer_section .col-lg-3{flex:0 0 25%;max-width:25%;}.footer_section .col-lg-4{flex:0 0 33.333333%;max-width:33.333333%;}.footer_section .col-lg-5{flex:0 0 41.666667%;max-width:41.666667%;}}
+
+  /* ============================================================
+     PAGESPEED V6 - crítico da /protese
+     Mantém a lógica e reduz bloqueio, CLS e reflow no mobile.
+     ============================================================ */
+  *,*::before,*::after{box-sizing:border-box;}
+  img,video,iframe{max-width:100%;}
+  .jacy-header-lite{
+    position:sticky!important;
+    top:0;
+    left:0;
+    right:0;
+    z-index:10000;
+    min-height:84px;
+    padding:10px 0;
+    background:rgba(0,0,0,.96);
+    box-shadow:0 8px 22px rgba(0,0,0,.18);
+  }
+  .jacy-header-lite .container{width:100%;max-width:1140px;margin:0 auto;padding:0 15px;}
+  .jacy-header-lite .navbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0;}
+  .jacy-header-lite .navbar-brand{display:inline-flex;align-items:center;flex:0 0 auto;text-decoration:none;color:#fff;font-weight:800;}
+  .jacy-header-lite .navbar-brand img{display:block;width:80px;height:54px;object-fit:contain;}
+  .jacy-header-lite .navbar-collapse{display:flex;align-items:center;justify-content:flex-end;flex:1 1 auto;}
+  .jacy-header-lite .navbar-nav{display:flex;align-items:center;gap:6px;margin:0 0 0 auto;padding:0;list-style:none;}
+  .jacy-header-lite .nav-link{display:block;color:#fff;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:15px;line-height:1.25;padding:10px 13px;border-radius:8px;}
+  .jacy-header-lite .nav-link:hover,.jacy-header-lite .nav-link:focus{color:#d1aa57;background:rgba(209,170,87,.08);}
+  .jacy-header-lite .navbar-toggler{display:none;width:44px;height:40px;border:0;background:transparent;padding:0;cursor:pointer;}
+  .jacy-header-lite .navbar-toggler span,.jacy-header-lite .navbar-toggler span::before,.jacy-header-lite .navbar-toggler span::after{display:block;width:34px;height:4px;background:#fff;border-radius:8px;content:"";position:relative;}
+  .jacy-header-lite .navbar-toggler span::before{position:absolute;top:-10px;left:0;}
+  .jacy-header-lite .navbar-toggler span::after{position:absolute;top:10px;left:0;}
+  .jacy-header-lite .dropdown{position:relative;}
+  .jacy-header-lite .dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:220px;padding:8px 0;margin:4px 0 0;background:#080808;border:1px solid rgba(209,170,87,.25);border-radius:12px;box-shadow:0 14px 30px rgba(0,0,0,.35);z-index:10001;}
+  .jacy-header-lite .dropdown-menu.show{display:block;}
+  .jacy-header-lite .dropdown-item{display:block;color:#fff;text-decoration:none;padding:10px 16px;font-weight:700;white-space:nowrap;}
+  .jacy-header-lite .dropdown-item:hover{background:rgba(209,170,87,.16);color:#d1aa57;}
+  .jacy-header-lite .dropdown-divider{height:1px;background:rgba(255,255,255,.09);margin:4px 0;}
+  #agenda-seletiva{min-height:620px;}
+  .modal{position:fixed;inset:0;z-index:10050;display:none;overflow:auto;background:rgba(0,0,0,.45);}
+  .modal.show{display:block;}
+  .modal-dialog{position:relative;width:auto;margin:1.5rem auto;pointer-events:none;}
+  .modal-content{position:relative;display:flex;flex-direction:column;width:100%;pointer-events:auto;background:#fff;border-radius:12px;outline:0;}
+  .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:10040;}
+  @media (max-width:991px){
+    .jacy-header-lite{min-height:74px;padding:8px 0;}
+    .jacy-header-lite .navbar-brand img{width:72px;height:48px;}
+    .jacy-header-lite .navbar-toggler{display:grid;place-items:center;}
+    .jacy-header-lite .navbar-collapse{display:none;position:absolute;top:100%;left:0;right:0;background:#050505;border-top:1px solid rgba(209,170,87,.22);padding:12px 15px;box-shadow:0 16px 30px rgba(0,0,0,.35);}
+    .jacy-header-lite .navbar-collapse.show{display:block;}
+    .jacy-header-lite .navbar-nav{display:block;margin:0;}
+    .jacy-header-lite .nav-link{text-align:left;padding:12px 8px;}
+    .jacy-header-lite .dropdown-menu{position:static;min-width:0;margin:5px 0 8px;box-shadow:none;}
+    #agenda-seletiva{min-height:760px;}
+    #agenda-seletiva>div{grid-template-columns:1fr!important;padding-top:44px!important;padding-bottom:44px!important;}
+  }
+
+  :root{
+    --bg:#0b0b0d;
+    --card:#1a1c23;
+    --text:#e9e9ee;
+    --muted:#d2d6de;
+    --brand:#2d86ff;
+  }
+
+  html,
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+  }
+
+  body{
+    overflow-x:hidden;
+  }
+
+  main{
+    display:block;
+    margin:0;
+    padding:0;
+    background:#020202;
+  }
+
+  .sr-only{
+    position:absolute !important;
+    width:1px !important;
+    height:1px !important;
+    padding:0 !important;
+    margin:-1px !important;
+    overflow:hidden !important;
+    clip:rect(0,0,0,0) !important;
+    white-space:nowrap !important;
+    border:0 !important;
+  }
+
+  .grecaptcha-badge{
+    z-index:2147483647;
+  }
+
+  main > section:not(.protese-banner-fixo),
+  #agenda-seletiva,
+  #galeria-banco,
+  .experience-section,
+  #depoimentos{
+    content-visibility:auto;
+    contain-intrinsic-size:900px;
+  }
+
+  /* ============================================================
+     Banner fixo da página /protese
+     Imagem recomendada: 1600 x 600 px, WebP, até 250 KB.
+     ============================================================ */
+  .protese-banner-fixo{
+    position:relative;
+    display:block;
+    width:100%;
+    height:clamp(520px,37.5vw,600px);
+    min-height:520px;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background:#000;
+    isolation:isolate;
+  }
+
+  .protese-banner-fixo__media,
+  .protese-banner-fixo__overlay{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+  }
+
+  .protese-banner-fixo__media{
+    z-index:1;
+    overflow:hidden;
+    background:#000;
+  }
+
+  .protese-banner-fixo__imagem{
+    display:block;
+    width:100%;
+    height:100% !important;
+    max-width:none;
+    object-fit:cover;
+    object-position:center center;
+    opacity:.48;
+  }
+
+  .protese-banner-fixo__overlay{
+    z-index:2;
+    pointer-events:none;
+    background:linear-gradient(90deg,rgba(0,0,0,.90) 0%,rgba(0,0,0,.68) 46%,rgba(0,0,0,.24) 100%);
+  }
+
+  .protese-banner-fixo__conteudo{
+    position:relative;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:100%;
+    min-height:0;
+    padding-top:34px;
+    padding-bottom:34px;
+  }
+
+  .protese-banner-fixo__caixa{
+    width:min(900px,72%);
+    padding:42px;
+    border-radius:26px;
+    background:rgba(4,8,14,.82);
+    box-shadow:0 18px 48px rgba(0,0,0,.28);
+  }
+
+  .protese-banner-fixo__titulo{
+    margin:0 0 14px;
+    color:#fff;
+    font-size:clamp(42px,4.7vw,72px);
+    line-height:1.08;
+    font-weight:800;
+    letter-spacing:-1px;
+  }
+
+  .protese-banner-fixo__descricao{
+    max-width:820px;
+    margin:0 0 24px;
+    color:#fff;
+    font-size:clamp(16px,1.35vw,22px);
+    line-height:1.8;
+  }
+
+  .protese-banner-fixo .btn-box{
+    margin:0;
+  }
+
+  .protese-banner-fixo .btn-contact{
+    min-width:240px;
+    padding:16px 28px;
+  }
+
+  .section{
+    margin:0;
+    padding:28px 0;
+    background:#020202;
+    border-top:1px solid #161616;
+  }
+
+  /* Correção: evita espaço vazio entre o banner e a próxima seção quando não houver cards de serviços */
+  .section:empty{
+    display:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    min-height:0 !important;
+  }
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+    background:#000;
+  }
+
+  .card .p{
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .price{
+    font-weight:800;
+    color:#fff;
+  }
+
+  .muted{
+    color:var(--muted);
+  }
+
+  /* Experiência */
+  .xp-wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 16px;
+    position:relative;
+    z-index:2;
+  }
+
+  .xp-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:32px;
+    align-items:center;
+  }
+
+  .xp-left-year{
+    position:relative;
+    text-align:center;
+  }
+
+  .xp-year{
+    display:block;
+    margin:0;
+    font-size:min(22vw,200px);
+    line-height:.85;
+    font-weight:900;
+    letter-spacing:2px;
+    background:linear-gradient(180deg,#ffffff 0%,#b9c5ff 60%,#8aa2ff 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+    text-shadow:0 10px 40px rgba(0,0,0,.25);
+  }
+
+  .xp-subtitle{
+    display:block;
+    margin:0;
+    font-size:28px;
+    font-weight:800;
+    color:#cfe1ff;
+  }
+
+  .xp-underline{
+    width:120px;
+    height:4px;
+    background:linear-gradient(90deg,#2d86ff,#3ddc97);
+    border-radius:6px;
+    margin:10px auto 18px;
+  }
+
+  .xp-visitas{
+    background:rgba(255,255,255,.05);
+    border:2px solid rgba(66,133,244,.30);
+    border-radius:15px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    max-width:100%;
+  }
+
+  .xp-vis-num{
+    font-size:2.4rem;
+    font-weight:800;
+    color:#4285f4;
+    line-height:1;
+    margin:0;
+  }
+
+  .xp-vis-label{
+    font-size:.9rem;
+    color:#bbbbbb;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+    margin:0;
+  }
+
+  .xp-title{
+    color:#ffffff;
+    font-size:clamp(28px,4.4vw,56px);
+    line-height:1.05;
+    font-weight:900;
+    margin:0 0 10px;
+  }
+
+  .xp-title .blue{
+    color:#8ab4ff;
+  }
+
+  .xp-desc{
+    color:#d7dbff;
+    line-height:1.75;
+    margin:0 0 22px;
+    max-width:60ch;
+    font-size:18px;
+  }
+
+  .exp-stats{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    margin-top:26px;
+  }
+
+  .exp-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    min-height:120px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .exp-num{
+    font-size:2.4rem;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:6px;
+  }
+
+  .exp-label{
+    font-size:.9rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#bbbbbb;
+    font-weight:600;
+  }
+
+  .exp-num--blue{
+    color:#4285f4;
+  }
+
+  .exp-num--green{
+    color:#34a853;
+  }
+
+  .exp-num--gold{
+    color:#fbbc04;
+  }
+
+  .xp-badges{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+
+  .xp-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:800;
+    border:1px solid;
+  }
+
+  .xp-badge--cert{
+    background:#0e1935;
+    border-color:rgba(141,176,255,.25);
+    color:#cfe1ff;
+  }
+
+  .xp-badge--qual{
+    background:#0f1d15;
+    border-color:rgba(83,214,155,.25);
+    color:#bff3dd;
+  }
+
+  .xp-badge .dot{
+    display:inline-grid;
+    place-items:center;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    flex:0 0 22px;
+  }
+
+  .xp-badge--cert .dot{
+    background:#2d86ff;
+    color:#ffffff;
+  }
+
+  .xp-badge--qual .dot{
+    background:#3ddc97;
+    color:#0d2a1f;
+  }
+
+  .experience-section.visitas-normal{
+    --vis-w:100%;
+    --vis-pad:20px;
+    --vis-num:2.4rem;
+    --vis-icon:2.2rem;
+    --vis-bw:2px;
+    --under-w:120px;
+    --under-h:4px;
+    --under-m:10px auto 18px;
+  }
+
+  .experience-section.visitas-normal .xp-visitas{
+    max-width:var(--vis-w);
+    margin:10px auto 0;
+    padding:var(--vis-pad);
+    border-width:var(--vis-bw);
+    border-radius:12px;
+  }
+
+  .experience-section.visitas-normal .xp-visitas > div:first-child{
+    font-size:var(--vis-icon) !important;
+    line-height:1;
+  }
+
+  .experience-section.visitas-normal .xp-visitas .xp-vis-num{
+    font-size:var(--vis-num);
+  }
+
+  .experience-section.visitas-normal .xp-left-year .xp-underline{
+    width:var(--under-w);
+    height:var(--under-h);
+    margin:var(--under-m);
+  }
+
+  /* Modal específico da página */
+  #modalSimulacaoCliente .modal-dialog{
+    max-width:1100px;
+    margin:1.5rem auto;
+  }
+
+  #modalSimulacaoCliente .modal-content{
+    border-radius:18px;
+    border:0;
+    overflow:hidden;
+    box-shadow:0 18px 50px rgba(0,0,0,.25);
+  }
+
+  #modalSimulacaoCliente .modal-header{
+    background:linear-gradient(90deg,#111 0%,#1f1f1f 100%);
+    color:#fff;
+    border-bottom:0;
+    padding:18px 22px;
+  }
+
+  #modalSimulacaoCliente .modal-header .close{
+    color:#fff;
+    opacity:1;
+    text-shadow:none;
+  }
+
+  #modalSimulacaoCliente .modal-body{
+    background:#f7f8fa;
+    padding:22px;
+  }
+
+  #modalSimulacaoCliente .alert{
+    border-radius:12px;
+    border:1px solid #d7c29a;
+    background:#f7f0e3;
+    color:#5e4824;
+    margin-bottom:18px;
+  }
+
+  #modalSimulacaoCliente .form-group label{
+    font-weight:700;
+    color:#333;
+    margin-bottom:8px;
+  }
+
+  #modalSimulacaoCliente .form-control{
+    border-radius:10px;
+    min-height:46px;
+    border:1px solid #d8dee6;
+    box-shadow:none;
+  }
+
+  #modalSimulacaoCliente .form-control:focus{
+    border-color:#b8862d;
+    box-shadow:0 0 0 .15rem rgba(184,134,45,.15);
+  }
+
+  .painel-comparacao-simulacao{
+    background:#fff;
+    border:1px solid #e4e7eb;
+    border-radius:16px;
+    padding:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
+    height:100%;
+  }
+
+  .painel-comparacao-simulacao .titulo-painel{
+    font-size:15px;
+    font-weight:700;
+    color:#2d3436;
+    margin-bottom:12px;
+  }
+
+  .box-imagem-simulacao{
+    background:linear-gradient(180deg,#ffffff 0%,#f8f9fb 100%);
+    border:1px solid #dfe4ea;
+    border-radius:14px;
+    min-height:340px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .box-imagem-simulacao img{
+    position:relative;
+    z-index:2;
+    max-width:100%;
+    max-height:310px;
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    background:#fff;
+  }
+
+  .legenda-simulacao{
+    margin-top:12px;
+    font-size:13px;
+    color:#6c757d;
+    line-height:20px;
+  }
+
+  #btn_simular_cliente{
+    border-radius:50px;
+    min-height:52px;
+    font-size:18px;
+    font-weight:700;
+    box-shadow:0 10px 24px rgba(184,134,45,.18);
+  }
+
+  #mensagem_simulacao_cliente{
+    font-size:14px;
+    font-weight:600;
+    min-height:22px;
+  }
+
+  .selo-comparacao{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    background:#111;
+    color:#fff;
+    margin-bottom:10px;
+  }
+
+  @media (max-width:1000px){
+    .cards{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+  }
+
+  @media (max-width:991px){
+    .protese-banner-fixo{
+      height:560px;
+      min-height:560px;
+    }
+
+    .protese-banner-fixo__caixa{
+      width:min(760px,82%);
+      padding:34px;
+    }
+
+    .xp-grid{
+      grid-template-columns:1fr;
+      gap:24px;
+    }
+
+    .exp-stats{
+      grid-template-columns:repeat(2,1fr);
+    }
+
+    #modalSimulacaoCliente .modal-body{
+      padding:16px;
+    }
+
+    .box-imagem-simulacao{
+      min-height:260px;
+      margin-bottom:12px;
+    }
+
+    .box-imagem-simulacao img{
+      max-height:230px;
+    }
+
+    #btn_simular_cliente{
+      font-size:16px;
+    }
+  }
+
+  @media (max-width:768px){
+    .protese-banner-fixo{
+      height:540px;
+      min-height:540px;
+    }
+
+    .protese-banner-fixo__imagem{
+      object-position:center center;
+    }
+
+    .protese-banner-fixo__overlay{
+      background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.72) 72%,rgba(0,0,0,.42) 100%);
+    }
+
+    .protese-banner-fixo__conteudo{
+      padding:24px 16px;
+    }
+
+    .protese-banner-fixo__caixa{
+      width:100%;
+      padding:28px 24px;
+      border-radius:20px;
+    }
+
+    .protese-banner-fixo__titulo{
+      font-size:clamp(34px,10vw,48px);
+    }
+
+    .protese-banner-fixo__descricao{
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .protese-banner-fixo .btn-contact{
+      min-width:210px;
+      padding:14px 22px;
+    }
+
+    .xp-year{
+      font-size:min(30vw,140px);
+    }
+
+    .xp-subtitle{
+      font-size:22px;
+    }
+
+    .xp-title{
+      font-size:clamp(24px,8vw,38px);
+    }
+
+    .xp-desc{
+      font-size:16px;
+    }
+
+    .exp-stats{
+      grid-template-columns:1fr;
+    }
+
+    .xp-badges{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .cards{
+      grid-template-columns:1fr;
+    }
+  }
+
+
+  /* PATCH V5: estabilidade visual sem mudar a lógica */
+  html{scroll-behavior:auto;}
+  .layout_padding,.footer_section,footer{content-visibility:auto;contain-intrinsic-size:760px;}
+  img{max-width:100%;height:auto;}
+
+
+  /* ============================================================
+     DEPOIMENTOS /PROTESE - organização profissional dos cards
+     Mantém os IDs, classes depItem e o carrossel original.
+     Ajusta somente espaçamento, tamanho padrão e responsividade.
+     ============================================================ */
+  .depoimentos-protese-section{
+    background:#050607 !important;
+    color:#fff !important;
+    padding:118px 0 58px !important;
+    margin:0 !important;
+    scroll-margin-top:130px !important;
+    overflow:hidden !important;
+  }
+  .depoimentos-protese-container{
+    width:100% !important;
+    max-width:1320px !important;
+    margin:0 auto !important;
+    padding:0 18px !important;
+  }
+  .depoimentos-protese-titulo{
+    color:#fff8ea !important;
+    text-align:center !important;
+    font-size:38px !important;
+    line-height:1.2 !important;
+    font-weight:900 !important;
+    margin:0 0 28px !important;
+    letter-spacing:.2px !important;
+    text-shadow:0 8px 24px rgba(0,0,0,.45) !important;
+  }
+  .depoimentos-controle-protese{
+    display:flex !important;
+    align-items:center !important;
+    gap:12px !important;
+    margin:0 auto 18px !important;
+    max-width:1020px !important;
+  }
+  .depoimentos-controle-protese button{
+    border:1px solid rgba(209,170,87,.28) !important;
+    background:rgba(209,170,87,.10) !important;
+    color:#fff !important;
+    width:42px !important;
+    height:42px !important;
+    border-radius:50% !important;
+    cursor:pointer !important;
+    font-size:26px !important;
+    line-height:1 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.22) !important;
+  }
+  .depoimentos-controle-protese button:disabled{
+    opacity:.45 !important;
+    cursor:not-allowed !important;
+  }
+  .depoimentos-dots-protese{
+    display:flex !important;
+    gap:7px !important;
+    flex:1 !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:12px !important;
+  }
+  .depoimentos-viewport-protese{
+    overflow:hidden !important;
+    padding:2px 0 8px !important;
+  }
+  .depoimentos-track-protese{
+    display:flex !important;
+    gap:26px !important;
+    align-items:stretch !important;
+    transition:transform .45s ease !important;
+    will-change:transform !important;
+  }
+  .depoimento-item-protese{
+    display:flex !important;
+    align-items:stretch !important;
+    box-sizing:border-box !important;
+    padding:0 0 8px !important;
+  }
+  .depoimento-card-protese{
+    width:100% !important;
+    height:650px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    background:linear-gradient(180deg,#121821 0%,#0a0d12 100%) !important;
+    border:1px solid rgba(209,170,87,.22) !important;
+    border-radius:22px !important;
+    padding:26px !important;
+    box-shadow:0 20px 48px rgba(0,0,0,.38) !important;
+    overflow:hidden !important;
+  }
+  .depoimento-card-topo-protese{
+    min-height:112px !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:20px !important;
+    padding-bottom:18px !important;
+    margin-bottom:18px !important;
+    border-bottom:1px solid rgba(209,170,87,.16) !important;
+  }
+  .depoimento-card-foto-protese{
+    width:96px !important;
+    height:96px !important;
+    object-fit:cover !important;
+    border-radius:50% !important;
+    border:3px solid rgba(209,170,87,.42) !important;
+    background:#000 !important;
+    box-shadow:0 12px 28px rgba(0,0,0,.32) !important;
+    flex:0 0 96px !important;
+  }
+  .depoimento-card-info-protese{
+    flex:1 !important;
+    min-width:0 !important;
+  }
+  .depoimento-card-info-protese strong{
+    display:block !important;
+    color:#fff !important;
+    font-size:26px !important;
+    line-height:1.15 !important;
+    font-weight:900 !important;
+    margin:0 0 7px !important;
+    word-break:break-word !important;
+  }
+  .depoimento-card-info-protese span{
+    display:inline-flex !important;
+    align-items:center !important;
+    gap:7px !important;
+    color:#d7c6a8 !important;
+    font-size:15px !important;
+    line-height:1.4 !important;
+  }
+  .depoimento-card-info-protese span:before{
+    content:"✓" !important;
+    width:19px !important;
+    height:19px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border-radius:50% !important;
+    background:rgba(209,170,87,.18) !important;
+    color:#d1aa57 !important;
+    font-size:12px !important;
+    font-weight:900 !important;
+  }
+  .depoimento-card-corpo-protese{
+    flex:1 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:0 !important;
+  }
+  .depoimento-card-texto-protese{
+    height:178px !important;
+    overflow:auto !important;
+    scrollbar-width:thin !important;
+    margin:0 !important;
+    padding:20px !important;
+    color:#f4f4f4 !important;
+    background:#0b0c0f !important;
+    border:1px solid rgba(255,255,255,.08) !important;
+    border-radius:16px !important;
+    text-align:center !important;
+    font-size:17px !important;
+    line-height:1.75 !important;
+  }
+  .depoimento-card-midias-protese{
+    height:260px !important;
+    margin-top:16px !important;
+    display:flex !important;
+    gap:14px !important;
+    min-height:0 !important;
+  }
+  .depoimento-card-midia-protese{
+    flex:1 1 0 !important;
+    min-width:0 !important;
+    height:100% !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#020203 !important;
+    border:1px solid rgba(255,255,255,.10) !important;
+    border-radius:18px !important;
+    overflow:hidden !important;
+  }
+  .depoimento-card-midia-protese video,
+  .depoimento-card-midia-protese img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    display:block !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background:#020203 !important;
+  }
+  .depoimento-card-sem-midia-protese{
+    flex:1 !important;
+    margin-top:16px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    text-align:center !important;
+    min-height:260px !important;
+    color:#a99d88 !important;
+    border:1px dashed rgba(209,170,87,.20) !important;
+    border-radius:18px !important;
+    background:rgba(209,170,87,.035) !important;
+    font-size:15px !important;
+  }
+  .depoimentos-protese-botao{
+    text-align:center !important;
+    margin-top:24px !important;
+  }
+  .depoimentos-protese-botao a{
+    display:inline-block !important;
+    background:#d1aa57 !important;
+    color:#111 !important;
+    padding:14px 28px !important;
+    border-radius:999px !important;
+    font-weight:900 !important;
+    text-decoration:none !important;
+    box-shadow:0 10px 28px rgba(209,170,87,.32) !important;
+  }
+  @media (max-width:899px){
+    .depoimentos-protese-section{
+      padding:104px 0 46px !important;
+      scroll-margin-top:112px !important;
+    }
+    .depoimentos-protese-titulo{
+      font-size:30px !important;
+    }
+    .depoimentos-track-protese{
+      gap:18px !important;
+    }
+    .depoimento-card-protese{
+      height:auto !important;
+      min-height:0 !important;
+      padding:20px !important;
+    }
+    .depoimento-card-topo-protese{
+      min-height:88px !important;
+      gap:15px !important;
+    }
+    .depoimento-card-foto-protese{
+      width:78px !important;
+      height:78px !important;
+      flex-basis:78px !important;
+    }
+    .depoimento-card-info-protese strong{
+      font-size:22px !important;
+    }
+    .depoimento-card-texto-protese{
+      height:auto !important;
+      max-height:230px !important;
+      font-size:16px !important;
+      padding:18px !important;
+    }
+    .depoimento-card-midias-protese{
+      height:auto !important;
+      flex-direction:column !important;
+    }
+    .depoimento-card-midia-protese{
+      height:280px !important;
+    }
+    .depoimento-card-sem-midia-protese{
+      display:none !important;
+    }
+  }
+
+/* ============================================================
+   Estilos que estavam diretamente nas tags HTML
+   ============================================================ */
+.protese-hero-dot{width:8px;height:8px;border-radius:50%;border:0;cursor:pointer;background:#ffffff55;}
+.protese-hero-dot.is-active{background:#ffffffaa;}
+.protese-estilo-001{position:absolute;inset:0;}
+.protese-estilo-002{position:relative;width:100%;padding-top:56.25%;}
+.protese-estilo-003{position:absolute;top:10px;right:10px;border:0;background:rgba(255,255,255,.15);color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer;z-index:1;}
+.protese-estilo-004{position:relative;width:96vw;max-width:980px;background:#000;border-radius:14px;overflow:hidden;}
+.protese-estilo-005{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:99999;}
+.protese-estilo-006{color:#e6e6e6;text-decoration:underline;}
+.protese-estilo-007{border-top:1px solid #2a2a2c;}
+.protese-estilo-008{opacity:.85;}
+.protese-estilo-009{color:#fff;margin-top:18px;}
+.protese-estilo-010{padding-left:18px;margin:0;}
+.protese-estilo-011{line-height:1.6;}
+.protese-estilo-012{color:#e6e6e6;opacity:1;}
+.protese-estilo-013{color:#fff;margin:0;}
+.protese-estilo-014{border-bottom:1px solid #2a2a2c;}
+.protese-estilo-015{background:#0f0f10;color:#e6e6e6;}
+.protese-estilo-016{color:#444;}
+.protese-estilo-017{background:#b8862d;border:0;border-radius:10px;padding:10px 18px;font-weight:700;cursor:pointer;}
+.protese-estilo-018{background:transparent;color:#eaeef3;border:1px solid #333;border-radius:10px;padding:10px 18px;font-weight:700;cursor:pointer;}
+.protese-estilo-019{border-top:1px solid #24262b;padding:12px 16px;display:flex;gap:10px;justify-content:flex-end;}
+.protese-estilo-020{margin-top:12px;text-align:center;font-size:13px;min-height:18px;}
+.protese-estilo-021{margin-top:6px;font-size:12px;opacity:.8;}
+.protese-estilo-022{width:100%;background:#eaecef;border:0;border-radius:8px;box-shadow:none;padding:10px 12px;outline:none;color:#111;}
+.protese-estilo-023{display:block;margin:0 0 6px;font-weight:700;}
+.protese-estilo-024{margin-top:14px;}
+.protese-estilo-025{display:block;width:96px;height:96px;object-fit:cover;border-radius:50%;border:2px solid #2a2a2c;background:#000;}
+.protese-estilo-026{flex:0 0 110px;margin-left:auto;display:grid;place-items:center;}
+.protese-estilo-027{flex:1 1 360px;}
+.protese-estilo-028{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;}
+.protese-estilo-029{width:100%;background:#eaecef;border:0;border-radius:8px;box-shadow:none;padding:12px 14px;outline:none;color:#111;}
+.protese-estilo-030{opacity:.8;font-weight:400;}
+.protese-estilo-031{margin-bottom:16px;}
+.protese-estilo-032{margin-bottom:12px;}
+.protese-estilo-033{padding:10px 16px 6px;}
+.protese-estilo-034{border:0;background:transparent;color:#eaeef3;font-size:28px;line-height:1;opacity:.9;cursor:pointer;}
+.protese-estilo-035{margin:0;font-weight:800;letter-spacing:.3px;}
+.protese-estilo-036{border:0;padding:14px 16px;}
+.protese-estilo-037{background:#0f0f10;color:#eaeef3;border:1px solid #2a2a2c;border-radius:12px;overflow:hidden;}
+.protese-estilo-038{max-width:760px;}
+.protese-estilo-039{text-align:center;}
+.protese-estilo-040{margin-top:12px;}
+.protese-estilo-041{font-size:14px;line-height:22px;}
+.protese-estilo-042{position:absolute;inset:0;width:100%;height:100%;display:block;border:0;}
+.protese-estilo-043{position:relative;width:100%;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000;}
+.protese-estilo-044{max-width:1280px;margin:0 auto;padding:0 16px;}
+.protese-estilo-045{background:#0b0b0d;padding:12px 0;}
+.protese-estilo-046{display:inline-block;background:#d1aa57;border:0;color:#fff;padding:14px 22px;border-radius:999px;font-weight:800;letter-spacing:.3px;text-decoration:none;box-shadow:0 8px 26px rgba(209,170,87,.35);}
+.protese-estilo-047{margin:0 0 22px;line-height:1.75;font-size:16px;color:#EDEDED;}
+.protese-estilo-048{margin:0 0 14px;font-size:42px;line-height:1.15;font-weight:800;letter-spacing:.4px;}
+.protese-estilo-049{width:100%;}
+.protese-estilo-050{flex:1 1 520px;min-width:280px;display:flex;align-items:center;}
+.protese-estilo-051{width:100%;height:auto;display:block;}
+.protese-estilo-052{border-radius:14px;overflow:hidden;background:#000;}
+.protese-estilo-053{flex:1 1 520px;min-width:280px;}
+.protese-estilo-054{max-width:1280px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;}
+.protese-estilo-055{background:#0b0b0d;color:#fff;padding:36px 0;}
+.protese-estilo-056{position:absolute;inset:auto -10% -40% -10%;height:300px;background:radial-gradient(60% 60% at 50% 0%,rgba(45,134,255,.25),transparent 60%);}
+.protese-estilo-057{text-align:left;}
+.protese-estilo-058{font-size:2.2rem;}
+.protese-estilo-059{background:linear-gradient(135deg,#11100d 0%,#1b1711 55%,#0f0d0a 100%); color:#e9e9ee; padding:56px 0 48px; border-top:1px solid #2a2a2a; border-bottom:1px solid #2a2a2a; position:relative; overflow:hidden;}
+.protese-estilo-060{font-size:1.3rem;padding:12px 34px;border-radius:50px;text-decoration:none;display:inline-block;font-weight:900;background:linear-gradient(135deg,#d1aa57 0%,#b8862d 55%,#8f6520 100%);border:0;color:#111;box-shadow:0 12px 28px rgba(184,134,45,.28);}
+.protese-estilo-061{margin:0 0 20px;color:#d7d7d7;line-height:1.8;}
+.protese-estilo-062{margin:0 0 12px;color:#fff;font-weight:700;}
+.protese-estilo-063{text-align:center;padding:28px;background:linear-gradient(180deg,rgba(24,21,16,.94) 0%,rgba(16,14,11,.98) 100%);border:1px solid rgba(209,170,87,.24);border-radius:16px;box-shadow:0 18px 36px rgba(0,0,0,.26);}
+.protese-estilo-064{max-width:760px;margin:0 auto;}
+.protese-estilo-065{margin:0;color:#5c4a2f !important;line-height:1.7;text-shadow:none !important;opacity:1 !important;font-weight:600;}
+.protese-estilo-066{margin:0 0 10px;font-weight:900;color:#1f160a !important;text-shadow:none !important;opacity:1 !important;}
+.protese-estilo-067{width:72px;height:72px;line-height:72px;margin:0 auto 15px;border-radius:50%;background:linear-gradient(135deg,#d4ad5a 0%,#b8872d 100%);color:#17120b;font-size:28px;font-weight:900;box-shadow:0 10px 22px rgba(184,134,45,.24);}
+.protese-estilo-068{flex:1 1 320px;max-width:390px;min-width:280px;background:linear-gradient(180deg,#f4ead7 0%,#e7d8bf 100%);border:1px solid rgba(209,170,87,.38);border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.22);padding:28px 22px;text-align:center;}
+.protese-estilo-069{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:28px;align-items:stretch;}
+.protese-estilo-070{margin:0 auto;max-width:860px;color:#d7d7d7;line-height:1.8;font-size:16px;}
+.protese-estilo-071{margin:0 0 14px;font-size:42px;line-height:1.15;font-weight:800;color:#fff;}
+.protese-estilo-072{text-align:center;margin:0 auto 34px;max-width:980px;}
+.protese-estilo-073{max-width:1280px;margin:0 auto;padding:0 16px;}
+.protese-estilo-074{background:linear-gradient(180deg,#090909 0%,#0f0c08 100%);padding:56px 0 48px;border-top:1px solid rgba(209,170,87,.18);border-bottom:1px solid rgba(209,170,87,.18);}
+.protese-estilo-075{margin-top:12px;font-weight:700;text-align:center;}
+.protese-estilo-076{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.protese-estilo-077{width:100%;aspect-ratio:1/1.02;position:relative;border-radius:12px;overflow:hidden;background:#000;}
+.protese-estilo-078{margin:0;min-width:25%;display:flex;flex-direction:column;align-items:center;}
+.protese-estilo-079{display:flex;gap:22px;transition:transform .4s ease;will-change:transform;}
+.protese-estilo-080{overflow:hidden;}
+.protese-estilo-081{position:absolute;right:-8px;top:45%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.15);color:#fff;font-size:24px;z-index:2;}
+.protese-estilo-082{position:absolute;left:-8px;top:45%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.15);color:#fff;font-size:24px;z-index:2;}
+.protese-estilo-083{position:relative;}
+.protese-estilo-084{margin:0 0 22px;font-size:28px;font-weight:800;letter-spacing:.3px;}
+.protese-estilo-085{max-width:1200px;margin:0 auto;padding:0 16px;}
+.protese-estilo-086{padding:40px 0;background:#0b0b0d;color:#fff;}
+.protese-estilo-087{display:block;text-align:center;background:transparent;color:#d1aa57;padding:18px 24px;border-radius:32px;text-decoration:none;font-weight:700;letter-spacing:.3px;border:2px solid rgba(215,239,230,.35);}
+.protese-estilo-088{display:block;text-align:center;background:#b8862d;color:#fff;padding:18px 24px;border-radius:32px;text-decoration:none;font-weight:700;letter-spacing:.3px;box-shadow:0 6px 24px rgba(19,170,120,.25);}
+.protese-estilo-089{display:flex;flex-direction:column;gap:16px;max-width:560px;}
+.protese-estilo-090{color:#cfe6dc;line-height:1.7;margin:0 0 28px 0;max-width:46ch;}
+.protese-estilo-091{font-size:48px;line-height:1.1;margin:0 0 20px 0;font-weight:800;letter-spacing:.5px;}
+.protese-estilo-092{position:absolute;left:0;right:0;bottom:12px;display:flex;gap:8px;justify-content:center;}
+.protese-estilo-093{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:grid;place-items:center;}
+.protese-estilo-094{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:grid;place-items:center;}
+.protese-estilo-095{position:absolute;left:-9999px;}
+.protese-estilo-096{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;border:0;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);}
+.protese-estilo-097{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;}
+.protese-estilo-098{min-width:100%;position:relative;aspect-ratio:16/9;background:#000;}
+.protese-estilo-099{display:flex;transition:transform .5s ease;}
+.protese-estilo-100{position:relative;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.protese-estilo-101{max-width:1200px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
+.protese-estilo-102{background:radial-gradient(1200px 600px at 70% -10%,#0d1f17 0%,#070b09 60%,#050807 100%);color:#fff;}
+.protese-estilo-103{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px;}

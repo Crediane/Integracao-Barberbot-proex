@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^dias_bloqueio_func(.*)$ index.php?pagina=dias_bloqueio_func [L]
+RewriteRule ^index(.*)$ index.php [L]
+RewriteRule ^receber(.*)$ index.php?pagina=receber [L]
+RewriteRule ^pagar(.*)$ index.php?pagina=pagar [L]
+RewriteRule ^home(.*)$ index.php?pagina=home [L]
+RewriteRule ^clientes(.*)$ index.php?pagina=clientes [L]
+RewriteRule ^pwa(.*)$ index.php?pagina=pwa [L]
+RewriteRule ^agenda(.*)$ index.php?pagina=agenda [L]
+RewriteRule ^minhas_comissoes(.*)$ index.php?pagina=minhas_comissoes [L]
+RewriteRule ^meus_servicos(.*)$ index.php?pagina=meus_servicos [L]
+RewriteRule ^dias(.*)$ index.php?pagina=dias [L]
+RewriteRule ^servicos_func(.*)$ index.php?pagina=servicos_func [L]
+

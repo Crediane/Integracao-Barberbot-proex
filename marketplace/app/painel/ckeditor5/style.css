@@ -1,0 +1,8 @@
+  .ck-editor__editable_inline {
+    letter-spacing: -0.5px;
+    /* Ajuste o valor conforme necessário */
+  }
+
+  #meuTextarea1{
+    height: 100px;
+  }

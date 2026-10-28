@@ -1,0 +1,606 @@
+.sub_page .hero_area {
+	min-height: auto;
+}
+
+.assinatura-tratamentos-page {
+	background: #0a0a0c;
+	color: #ffffff;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding-bottom: 40px;
+}
+
+.assinatura-tratamentos-page .section-title {
+	color: #ffffff !important;
+}
+
+.assinatura-tratamentos-topo {
+	text-align: center;
+	padding: 60px 0 40px;
+	background: #0a0a0c;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.assinatura-tratamentos-topo h1 {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	color: #e5c158;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.assinatura-tratamentos-topo h2 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: #ffffff;
+	margin: 0;
+}
+
+.assinatura-tratamentos-split-section {
+	padding: 50px 0;
+	background: #0d0d11;
+}
+
+.assinatura-tratamentos-card-vendas,
+.assinatura-tratamentos-card-carrossel {
+	background: #121216;
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 16px;
+	height: auto !important;
+	min-height: 100%;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.assinatura-tratamentos-card-vendas {
+	padding: 35px;
+}
+
+.assinatura-tratamentos-card-vendas h3 {
+	color: #e5c158;
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.assinatura-tratamentos-card-vendas p {
+	color: #e4e4e4;
+	font-size: 1.05rem;
+	line-height: 1.7;
+	margin-bottom: 25px;
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+.assinatura-tratamentos-vantagens {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 30px;
+}
+
+.assinatura-tratamentos-vantagens li {
+	position: relative;
+	padding-left: 28px;
+	margin-bottom: 14px;
+	color: #f0f0f0;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.assinatura-tratamentos-vantagens li:before {
+	content: '✓';
+	color: #e5c158;
+	font-weight: 900;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.assinatura-tratamentos-btn-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 50px;
+	padding: 12px 28px;
+	border-radius: 8px;
+	font-weight: 700;
+	text-decoration: none !important;
+	background: linear-gradient(135deg, #e5c158, #c49a29);
+	color: #000000 !important;
+	box-shadow: 0 6px 20px rgba(229,193,88,0.2);
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.assinatura-tratamentos-btn-cta:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 25px rgba(229,193,88,0.3);
+}
+
+.assinatura-tratamentos-card-carrossel {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel,
+.assinatura-tratamentos-card-carrossel .carousel-inner {
+	position: relative;
+	width: 100%;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-inner {
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-item {
+	display: none;
+	width: 100%;
+	height: auto !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-item.active {
+	display: block !important;
+}
+
+.assinatura-tratamentos-portfolio-midia {
+	background: #000000;
+	aspect-ratio: 16 / 9;
+	min-height: 260px;
+	max-height: 360px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.assinatura-tratamentos-portfolio-midia img,
+.assinatura-tratamentos-portfolio-midia video,
+.assinatura-tratamentos-portfolio-midia iframe {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border: 0;
+}
+
+.assinatura-tratamentos-portfolio-conteudo {
+	padding: 22px 14px 8px;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-portfolio-conteudo h4 {
+	color: #ffffff !important;
+	font-size: 1.35rem;
+	font-weight: 800;
+	line-height: 1.25;
+	margin: 0 0 12px;
+	text-transform: uppercase;
+}
+
+.assinatura-tratamentos-portfolio-conteudo p {
+	color: #e4e4e4 !important;
+	font-size: 1rem;
+	line-height: 1.65;
+	margin: 0;
+	word-break: normal !important;
+	overflow-wrap: break-word !important;
+	white-space: normal !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-carousel-controls .carousel-control-prev,
+.assinatura-tratamentos-carousel-controls .carousel-control-next {
+	position: absolute;
+	z-index: 20;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none !important;
+	width: 44px;
+	height: 44px;
+	background: rgba(229,193,88,0.22);
+	border: 1px solid rgba(229,193,88,0.35);
+	border-radius: 50%;
+	opacity: 0.95;
+	transition: all 0.3s ease;
+}
+
+.assinatura-tratamentos-carousel-controls .carousel-control-prev {
+	left: 12px;
+}
+
+.assinatura-tratamentos-carousel-controls .carousel-control-next {
+	right: 12px;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-control-prev-icon,
+.assinatura-tratamentos-card-carrossel .carousel-control-next-icon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border-top: 4px solid #ffffff;
+	border-right: 4px solid #ffffff;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-control-prev-icon {
+	transform: rotate(-135deg);
+	margin-left: 5px;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-control-next-icon {
+	transform: rotate(45deg);
+	margin-right: 5px;
+}
+
+.assinatura-tratamentos-carousel-controls .carousel-control-prev:hover,
+.assinatura-tratamentos-carousel-controls .carousel-control-next:hover {
+	background: rgba(229,193,88,0.9);
+}
+
+.assinatura-tratamentos-carousel-controls .carousel-control-prev:hover .carousel-control-prev-icon,
+.assinatura-tratamentos-carousel-controls .carousel-control-next:hover .carousel-control-next-icon {
+	border-color: #000000;
+}
+
+.assinatura-tratamentos-planos {
+	background: #0a0a0c;
+	padding: 60px 0;
+}
+
+.assinatura-tratamentos-planos .pricing--item {
+	height: 100%;
+	background: #ffffff;
+	border-radius: 16px;
+	overflow: hidden;
+	border: 1px solid rgba(255,255,255,0.08);
+	box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: all 0.3s ease;
+	padding-bottom: 25px;
+}
+
+.assinatura-tratamentos-planos .pricing--item:hover {
+	transform: translateY(-5px);
+	border-color: rgba(229,193,88,0.3);
+}
+
+.assinatura-tratamentos-planos .pricing--item .header {
+	background: linear-gradient(180deg, #3a2d18 0%, #231a0d 100%);
+	padding: 30px 20px;
+	text-align: center;
+	border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.assinatura-tratamentos-planos .pricing--item .header h3 {
+	color: #ffffff !important;
+	font-size: 1.35rem;
+	font-weight: 800;
+	margin: 0 0 10px;
+}
+
+.assinatura-tratamentos-planos .pricing--item .header .price {
+	color: #e5c158 !important;
+	font-size: 1.1rem;
+	margin: 0;
+}
+
+.assinatura-tratamentos-planos .pricing--item .header .price span {
+	font-size: 1.9rem;
+	font-weight: 900;
+	color: #ffffff !important;
+}
+
+.assinatura-tratamentos-planos .pricing--item .features {
+	padding: 24px;
+	flex-grow: 1;
+	background: #ffffff;
+}
+
+.assinatura-tratamentos-planos .pricing--item .features ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.assinatura-tratamentos-planos .pricing--item .features li {
+	list-style: none;
+	position: relative;
+	padding: 15px 15px 15px 44px;
+	margin-bottom: 12px;
+	color: #333333 !important;
+	font-size: 1rem;
+	line-height: 1.45;
+	text-align: left;
+	font-weight: 800;
+	background: #f3f3f3;
+	min-height: 54px;
+	display: flex;
+	align-items: center;
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+.assinatura-tratamentos-planos .pricing--item .features li:before {
+	content: '✓';
+	color: #c99a18;
+	font-weight: 900;
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.assinatura-tratamentos-planos .pricing--item .action {
+	padding: 0 24px;
+}
+
+.assinatura-tratamentos-planos .btn-custom {
+	background: linear-gradient(135deg, #e5c158, #c49a29) !important;
+	color: #000000 !important;
+	border: 0 !important;
+	border-radius: 8px !important;
+	font-weight: 800 !important;
+	width: 100%;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	min-height: 48px;
+	font-size: 1rem;
+	padding: 12px 24px;
+}
+
+.assinatura-tratamentos-btn-cta,
+.assinatura-tratamentos-planos .btn-custom {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.assinatura-tratamentos-pendente {
+	background: #181820;
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 12px;
+	padding: 20px;
+	color: #cccccc;
+	text-align: center;
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+	.assinatura-tratamentos-portfolio-midia {
+		aspect-ratio: 16 / 9;
+		max-height: none;
+		min-height: 220px;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo {
+		padding: 18px 8px 4px;
+	}
+}
+
+@media (max-width: 767px) {
+	.assinatura-tratamentos-topo {
+		padding: 40px 0 25px;
+	}
+
+	.assinatura-tratamentos-topo h2 {
+		font-size: 1.8rem;
+	}
+
+	.assinatura-tratamentos-btn-cta {
+		width: 100%;
+	}
+
+	.assinatura-tratamentos-portfolio-midia {
+		min-height: 190px;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo h4 {
+		font-size: 1.15rem;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo p {
+		font-size: 0.95rem;
+		line-height: 1.55;
+	}
+}
+
+/* ============================================================
+   CORREÇÃO DO CARROSSEL E TEXTO DO PORTFÓLIO
+   Mantém PHP, banco e JS. Ajusta apenas o CSS para o texto
+   abaixo do vídeo aparecer completo, sem corte visual.
+   ============================================================ */
+
+.assinatura-tratamentos-card-carrossel {
+	justify-content: flex-start !important;
+	overflow: visible !important;
+	height: auto !important;
+	min-height: 100% !important;
+	max-height: none !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel {
+	position: relative !important;
+	width: 100% !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-inner {
+	position: relative !important;
+	width: 100% !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-item {
+	display: none !important;
+	width: 100% !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-card-carrossel .carousel-item.active {
+	display: block !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-portfolio-midia {
+	width: 100% !important;
+	height: auto !important;
+	min-height: 260px !important;
+	max-height: none !important;
+	aspect-ratio: 16 / 9 !important;
+	overflow: hidden !important;
+}
+
+.assinatura-tratamentos-portfolio-midia img,
+.assinatura-tratamentos-portfolio-midia video,
+.assinatura-tratamentos-portfolio-midia iframe {
+	width: 100% !important;
+	height: 100% !important;
+	min-height: 260px !important;
+	object-fit: cover !important;
+	display: block !important;
+	border: 0 !important;
+}
+
+.assinatura-tratamentos-portfolio-conteudo {
+	display: block !important;
+	position: relative !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+	overflow-y: visible !important;
+	overflow-x: visible !important;
+	padding: 22px 14px 18px !important;
+}
+
+.assinatura-tratamentos-portfolio-conteudo h4 {
+	color: #ffffff !important;
+	font-size: 1.35rem !important;
+	font-weight: 800 !important;
+	line-height: 1.25 !important;
+	margin: 0 0 12px !important;
+	text-transform: uppercase !important;
+	white-space: normal !important;
+	word-break: normal !important;
+	overflow-wrap: break-word !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+	display: block !important;
+	-webkit-line-clamp: unset !important;
+	line-clamp: unset !important;
+	-webkit-box-orient: initial !important;
+}
+
+.assinatura-tratamentos-portfolio-conteudo p {
+	color: #e4e4e4 !important;
+	font-size: 1rem !important;
+	line-height: 1.65 !important;
+	margin: 0 !important;
+	white-space: normal !important;
+	word-break: normal !important;
+	overflow-wrap: break-word !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: none !important;
+	overflow: visible !important;
+	display: block !important;
+	-webkit-line-clamp: unset !important;
+	line-clamp: unset !important;
+	-webkit-box-orient: initial !important;
+}
+
+.assinatura-tratamentos-carousel-controls {
+	position: relative !important;
+	width: 100% !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: visible !important;
+}
+
+.assinatura-tratamentos-carousel-controls .carousel-control-prev,
+.assinatura-tratamentos-carousel-controls .carousel-control-next {
+	top: 130px !important;
+	transform: translateY(-50%) !important;
+}
+
+@media (max-width: 991px) {
+	.assinatura-tratamentos-portfolio-midia {
+		min-height: 220px !important;
+		max-height: none !important;
+	}
+
+	.assinatura-tratamentos-portfolio-midia img,
+	.assinatura-tratamentos-portfolio-midia video,
+	.assinatura-tratamentos-portfolio-midia iframe {
+		min-height: 220px !important;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo {
+		max-height: none !important;
+		overflow: visible !important;
+		padding: 18px 8px 16px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.assinatura-tratamentos-portfolio-midia {
+		min-height: 190px !important;
+		max-height: none !important;
+	}
+
+	.assinatura-tratamentos-portfolio-midia img,
+	.assinatura-tratamentos-portfolio-midia video,
+	.assinatura-tratamentos-portfolio-midia iframe {
+		min-height: 190px !important;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo {
+		max-height: none !important;
+		overflow: visible !important;
+		padding: 16px 8px 16px !important;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo h4 {
+		font-size: 1.15rem !important;
+	}
+
+	.assinatura-tratamentos-portfolio-conteudo p {
+		font-size: 0.95rem !important;
+		line-height: 1.55 !important;
+	}
+
+	.assinatura-tratamentos-carousel-controls .carousel-control-prev,
+	.assinatura-tratamentos-carousel-controls .carousel-control-next {
+		top: 95px !important;
+	}
+}
+

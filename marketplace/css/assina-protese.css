@@ -1,0 +1,409 @@
+.sub_page .hero_area {
+		min-height: auto;
+	}
+
+	.assinatura-protese-page {
+		background: #0a0a0c;
+		color: #ffffff;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		padding-bottom: 40px;
+	}
+
+	.assinatura-protese-page .section-title {
+		color: #ffffff !important;
+	}
+
+	.assinatura-protese-topo {
+		text-align: center;
+		padding: 60px 0 40px;
+		background: #0a0a0c;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.assinatura-protese-topo h1 {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		color: #e5c158;
+		letter-spacing: 2px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+
+	.assinatura-protese-topo h2 {
+		font-size: 2.5rem;
+		font-weight: 800;
+		color: #ffffff;
+		margin: 0;
+	}
+
+	.assinatura-protese-split-section {
+		padding: 50px 0;
+		background: #0d0d11;
+	}
+
+	.assinatura-protese-card-vendas {
+		background: #121216;
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 16px;
+		padding: 35px;
+		height: 100%;
+		box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+	}
+
+	.assinatura-protese-card-vendas h3 {
+		color: #e5c158;
+		font-size: 1.4rem;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.assinatura-protese-card-vendas p {
+		color: #cccccc;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		margin-bottom: 25px;
+	}
+
+	.assinatura-protese-vantagens {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 30px;
+	}
+
+	.assinatura-protese-vantagens li {
+		position: relative;
+		padding-left: 28px;
+		margin-bottom: 14px;
+		color: #e0e0e0;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.assinatura-protese-vantagens li:before {
+		content: '✓';
+		color: #e5c158;
+		font-weight: 900;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.assinatura-protese-btn-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 50px;
+		padding: 12px 28px;
+		border-radius: 8px;
+		font-weight: 700;
+		text-decoration: none !important;
+		background: linear-gradient(135deg, #e5c158, #c49a29);
+		color: #000000 !important;
+		box-shadow: 0 6px 20px rgba(229,193,88,0.2);
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.assinatura-protese-btn-cta:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 10px 25px rgba(229,193,88,0.3);
+	}
+
+	.assinatura-protese-card-carrossel {
+		background: #121216;
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 16px;
+		padding: 20px;
+		height: 100%;
+		box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.assinatura-protese-portfolio-midia {
+		background: #000000;
+		aspect-ratio: 16 / 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		border-radius: 12px;
+	}
+
+	.assinatura-protese-portfolio-midia img,
+	.assinatura-protese-portfolio-midia video,
+	.assinatura-protese-portfolio-midia iframe {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		border: 0;
+	}
+
+	.assinatura-protese-portfolio-conteudo {
+		padding: 20px 10px 5px;
+	}
+
+	.assinatura-protese-portfolio-conteudo h4 {
+		color: #ffffff;
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin: 0 0 8px;
+	}
+
+	.assinatura-protese-portfolio-conteudo p {
+		color: #aaaaaa;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.assinatura-protese-carousel-controls .carousel-control-prev,
+	.assinatura-protese-carousel-controls .carousel-control-next {
+		width: 44px;
+		height: 44px;
+		background: rgba(229,193,88,0.2);
+		border: 1px solid rgba(229,193,88,0.3);
+		border-radius: 50%;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 0.8;
+		transition: all 0.3s ease;
+	}
+
+	.assinatura-protese-carousel-controls .carousel-control-prev:hover,
+	.assinatura-protese-carousel-controls .carousel-control-next:hover {
+		background: rgba(229,193,88,0.8);
+		color: #000000;
+		opacity: 1;
+	}
+
+	.assinatura-protese-planos {
+		background: #0a0a0c;
+		padding: 60px 0;
+	}
+
+	.assinatura-protese-planos .pricing--item {
+		height: 100%;
+		background: #121216;
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid rgba(255,255,255,0.06);
+		box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		transition: all 0.3s ease;
+		padding-bottom: 25px;
+	}
+
+	.assinatura-protese-planos .pricing--item:hover {
+		transform: translateY(-5px);
+		border-color: rgba(229,193,88,0.3);
+	}
+
+	.assinatura-protese-planos .pricing--item .header {
+		background: linear-gradient(180deg, #181820 0%, #121216 100%);
+		padding: 30px 20px;
+		text-align: center;
+		border-bottom: 1px solid rgba(255,255,255,0.04);
+	}
+
+	.assinatura-protese-planos .pricing--item .features {
+		padding: 24px;
+		flex-grow: 1;
+	}
+
+	.assinatura-protese-planos .pricing--item .features li {
+		list-style: none;
+		position: relative;
+		padding-left: 24px;
+		margin-bottom: 12px;
+		color: #cccccc;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		text-align: left;
+	}
+
+	.assinatura-protese-planos .pricing--item .features li:before {
+		content: '✓';
+		color: #e5c158;
+		font-weight: 900;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.assinatura-protese-planos .btn-custom {
+		background: linear-gradient(135deg, #e5c158, #c49a29) !important;
+		color: #000000 !important;
+		border: 0 !important;
+		border-radius: 8px !important;
+		font-weight: 700 !important;
+		width: 100%;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.assinatura-protese-planos .pricing--item .action {
+		padding: 0 24px;
+	}
+
+	.assinatura-protese-pendente {
+		background: #181820;
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 12px;
+		padding: 20px;
+		color: #cccccc;
+		text-align: center;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 767px) {
+		.assinatura-protese-topo {
+			padding: 40px 0 25px;
+		}
+
+		.assinatura-protese-topo h2 {
+			font-size: 1.8rem;
+		}
+
+		.assinatura-protese-btn-cta {
+			width: 100%;
+		}
+	}
+
+
+/* Correção do submenu: mantém o dropdown do cabeçalho acima do conteúdo da página. */
+.hero_area,
+.header_section,
+.header_section .container,
+.header_section .navbar,
+.header_section .navbar-collapse,
+.header_section .navbar-nav,
+.header_section .nav-item,
+.header_section .dropdown {
+	position: relative;
+	overflow: visible !important;
+	z-index: 9999;
+}
+
+.header_section .dropdown-menu,
+.navbar .dropdown-menu,
+.dropdown-menu {
+	z-index: 10050 !important;
+}
+
+.assinatura-protese-page,
+.assinatura-protese-topo,
+.assinatura-protese-split-section,
+.assinatura-protese-planos {
+	position: relative;
+	z-index: 1;
+}
+
+.assinatura-protese-card-vendas,
+.assinatura-protese-card-carrossel,
+.assinatura-protese-planos .pricing--item {
+	position: relative;
+	z-index: 1;
+}
+
+#carouselProtesePortfolio .carousel-item {
+	display: none;
+}
+
+#carouselProtesePortfolio .carousel-item.active {
+	display: block;
+}
+
+/* ============================================================
+   AJUSTE DO SUBMENU DO CABEÇALHO NA PÁGINA ASSINA-PRÓTESE
+   Mantém a lógica do menu atual e corrige apenas camada/posição.
+   ============================================================ */
+body .hero_area,
+body .header_section,
+body .header_section .container,
+body .header_section .container-fluid,
+body .header_section .navbar,
+body .header_section .custom_nav-container,
+body .header_section .navbar-collapse,
+body .header_section .navbar-nav,
+body .header_section .nav-item,
+body .header_section .dropdown {
+	overflow: visible !important;
+}
+
+body .header_section {
+	position: relative !important;
+	z-index: 2147483000 !important;
+	isolation: auto !important;
+}
+
+body .header_section .dropdown {
+	position: relative !important;
+	z-index: 2147483100 !important;
+}
+
+body .header_section .dropdown-menu {
+	position: absolute !important;
+	top: 100% !important;
+	left: 0 !important;
+	right: auto !important;
+	transform: none !important;
+	z-index: 2147483200 !important;
+	min-width: 245px !important;
+	max-height: none !important;
+	height: auto !important;
+	padding: 8px 0 !important;
+	margin: 8px 0 0 !important;
+	background: rgba(10, 10, 12, 0.98) !important;
+	border: 1px solid rgba(229, 193, 88, 0.35) !important;
+	border-radius: 14px !important;
+	box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55) !important;
+	overflow: visible !important;
+}
+
+body .header_section .dropdown-menu.show,
+body .header_section .nav-item.dropdown.show > .dropdown-menu,
+body .header_section .nav-item.dropdown:hover > .dropdown-menu {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+}
+
+body .header_section .dropdown-menu .dropdown-item,
+body .header_section .dropdown-menu a {
+	position: relative !important;
+	display: block !important;
+	width: 100% !important;
+	padding: 11px 16px !important;
+	color: #ffffff !important;
+	background: transparent !important;
+	font-size: 14px !important;
+	font-weight: 700 !important;
+	line-height: 1.25 !important;
+	white-space: nowrap !important;
+	text-decoration: none !important;
+	z-index: 2147483300 !important;
+}
+
+body .header_section .dropdown-menu .dropdown-item:hover,
+body .header_section .dropdown-menu a:hover {
+	color: #e5c158 !important;
+	background: rgba(229, 193, 88, 0.12) !important;
+}
+
+body .assinatura-protese-page,
+body .assinatura-protese-topo,
+body .assinatura-protese-split-section,
+body .assinatura-protese-planos,
+body .assinatura-protese-card-vendas,
+body .assinatura-protese-card-carrossel {
+	z-index: 1 !important;
+	isolation: auto !important;
+}

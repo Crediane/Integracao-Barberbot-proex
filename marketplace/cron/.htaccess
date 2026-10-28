@@ -1,0 +1,49 @@
+# /public_html/cron/.htaccess
+# Mantém proteção do diretório e libera apenas os arquivos de cron permitidos.
+
+<IfModule mod_authz_core.c>
+
+    # Bloqueia arquivos sensíveis do diretório
+    <Files "texto.php">
+        Require all denied
+    </Files>
+
+    <Files "marketing_file.php">
+        Require all denied
+    </Files>
+
+    # Libera CRONs específicos e qualquer arquivo no padrão cron_*.php
+    <FilesMatch "^(cobranca_diaria|cron|alerta_manutencao|cron_.*)\.php$">
+        Require all granted
+    </FilesMatch>
+
+    # Bloqueia qualquer outro PHP que não esteja na lista liberada acima
+    <FilesMatch "^(?!(cobranca_diaria|cron|alerta_manutencao|cron_.*)\.php$).+\.php$">
+        Require all denied
+    </FilesMatch>
+
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+
+    <Files "texto.php">
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    <Files "marketing_file.php">
+        Order allow,deny
+        Deny from all
+    </Files>
+
+    <FilesMatch "^(cobranca_diaria|cron|alerta_manutencao|cron_.*)\.php$">
+        Order allow,deny
+        Allow from all
+    </FilesMatch>
+
+    <FilesMatch "^(?!(cobranca_diaria|cron|alerta_manutencao|cron_.*)\.php$).+\.php$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+</IfModule>

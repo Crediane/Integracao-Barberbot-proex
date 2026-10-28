@@ -1,0 +1,62 @@
+# robots.txt — /jc.tec.br/
+# Última atualização: 2025-11-06
+
+User-agent: *
+# Permitir tudo no site público
+Allow: /
+
+# Bloquear áreas administrativas e sensíveis
+Disallow: /painel/
+Disallow: /admin/
+Disallow: /sistema/
+Disallow: /cpanel/
+Disallow: /tmp/
+Disallow: /vendor/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /cgi-bin/
+
+# Bloquear endpoints e arquivos técnicos
+Disallow: /login
+Disallow: /logout
+Disallow: /register
+Disallow: /checkout
+Disallow: /xmlrpc.php
+Disallow: /*?rest_route=
+Disallow: /*?author=*
+Disallow: /*?replytocom=*
+
+# Bloquear páginas de busca interna / parâmetros de tracking
+Disallow: /buscar/
+Disallow: /search/
+Disallow: /*?s=*
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?_ga=*
+Disallow: /*?PHPSESSID=*
+
+# Garantir que bots possam ler assets mesmo em pastas bloqueadas
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# (Opcional) Sugerir frequência moderada a crawlers que respeitam Crawl-delay
+Crawl-delay: 5
+
+# Regras específicas para crawlers “pesados”
+User-agent: AhrefsBot
+Crawl-delay: 15
+User-agent: SemrushBot
+Crawl-delay: 15
+User-agent: MJ12bot
+Crawl-delay: 15
+
+# Sitemaps
+Sitemap: https:///jc.tec.br/sitemap.xml

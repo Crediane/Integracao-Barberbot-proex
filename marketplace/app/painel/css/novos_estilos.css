@@ -1,0 +1,158 @@
+.labels_form{
+	font-size:14px !important;
+	font-weight: bold !important;
+}
+
+.textos_list{
+	font-size:14px;
+	font-weight:700;
+	padding:0;
+	display:inline-block;
+}
+
+.subtitulo_list{
+	font-size:11px ;	
+	padding:0;
+	margin-top:-15px !important;
+}
+
+.page_title_dados{
+	font-size:13px;
+	line-height:30px;
+	font-weight:400;
+	padding:5px;
+	margin-top: -15px;
+	background: #445cfd; 
+	color:#FFF;
+}
+
+.tabela_dados{
+	background:#f5f8ff !important; 
+	font-size:12px
+}
+
+.celula_tabela{
+	background:#f5f8ff !important; 
+}
+
+
+.botao_salvar{
+	color:#FFF !important;
+	font-size:15px !important;
+	background-color:#0be0af !important;
+}
+
+
+.label_switch{
+	font-size:11px !important;
+	
+}
+
+
+.page_title_excluir{
+	font-size:15px;
+	line-height:30px;
+	font-weight:400;
+	padding:5px;
+	margin-top: -15px;
+	background: #445cfd; 
+	color:#FFF;
+}
+
+
+.botoes_excluir{
+	background:#e4e9f5 !important; 
+	font-size:12px;
+	padding:15px;
+}
+
+.botao_modelo{
+width:100%;
+padding:4% 0 4% 0; 
+margin:10px 0 0 0; 
+font-weight:normal;
+text-align:center;
+cursor:pointer; 
+font-size:20px;
+background-color:#0be0af;
+color:#222222;
+border: none;
+cursor:pointer;
+}
+
+
+.botao_excluir{
+	color:#FFF !important;
+	font-size:15px !important;
+	background-color:#d43d3d !important;
+	height: 40px;
+}
+
+.botao_confirmar{
+	color:#FFF !important;
+	font-size:15px !important;
+	background-color:#067c28 !important;
+	height: 40px;
+}
+
+.botao_cancelar{
+	color:#FFF !important;
+	font-size:15px !important;
+	background-color:#7a7a7a !important;
+	height: 40px;
+}
+
+
+.limpar_botao{
+	background: transparent;
+	border:none;
+}
+
+
+.desabilitar_botao{	
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+
+
+.botao_modelo_popup{
+width:100%;
+padding:4% 0 4% 0; 
+font-weight:normal;
+text-align:center;
+cursor:pointer; 
+font-size:15px;
+background-color:#1e4fc9;
+color:#FFF;
+border: none;
+cursor:pointer;
+
+}
+
+
+.ocultar{
+	display:none !important;
+}
+
+
+input::placeholder{
+	color: rgb(199, 199, 199) !important;
+	
+}
+
+.color_verde{
+	color: #067c28;
+}
+
+.text-dark{
+	color: #222222;
+}
+
+.form-data{
+	height: 55px !important;
+		font-size: 10px !important;
+}
