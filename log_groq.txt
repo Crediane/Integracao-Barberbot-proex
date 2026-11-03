@@ -1,0 +1,120 @@
+Erro: 
+Resposta: {"text":" Oi, agendar.","x_groq":{"id":"req_01m6fakt08ep9txy845pq052gx"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 1.","x_groq":{"id":"req_01m6fam4gmephrej8wb543zdd2"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 2.","x_groq":{"id":"req_01m6famfw0e1p9ae4chgbf6c42"}}
+
+
+Erro: 
+Resposta: {"text":" Olá, quero fazer um agendamento.","x_groq":{"id":"req_01m6fb0x73e0csgfywdb0a1ddm"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 1.","x_groq":{"id":"req_01m6fb17qaedmt386dyqtsz3fe"}}
+
+
+Erro: 
+Resposta: {"text":" Qual é o endereço de vocês?","x_groq":{"id":"req_01m6fb1kazemrsapnsmsnqkzec"}}
+
+
+Erro: 
+Resposta: {"text":" Quero verificar meus agendamentos.","x_groq":{"id":"req_01m6fb1wa2edkbza7r07y6b7e9"}}
+
+
+Erro: 
+Resposta: {"text":" Agendar um horário.","x_groq":{"id":"req_01m6fb27cde27aj1dwg5v5rxjz"}}
+
+
+Erro: 
+Resposta: {"text":" 0 para voltar ao menu inicial.","x_groq":{"id":"req_01m6fb2fw1etnrrarkg3db7b7x"}}
+
+
+Erro: 
+Resposta: {"text":" Quero ver os meus agendamentos.","x_groq":{"id":"req_01m6fb4zfze8cvj598qgpj0x5n"}}
+
+
+Erro: 
+Resposta: {"text":" Há-se-am-bar.","x_groq":{"id":"req_01m6fb5ad3eypv1mp4jk4n61xp"}}
+
+
+Erro: 
+Resposta: {"text":" Quero cancelar o agendamento.","x_groq":{"id":"req_01m6fb5q1se9brj3900b08hy1q"}}
+
+
+Erro: 
+Resposta: {"text":" Número 1","x_groq":{"id":"req_01m6fb5z3ye2ytpp121dcdzsc8"}}
+
+
+Erro: 
+Resposta: {"text":" Encerrar o atendimento.","x_groq":{"id":"req_01m6fb6vp0en1vbt1pnsa0qk3a"}}
+
+
+Erro: 
+Resposta: {"text":" Oiê, queria fazer um agendamento.","x_groq":{"id":"req_01m6fcj5dvehxtprfnpaz4xfr1"}}
+
+
+Erro: 
+Resposta: {"text":" Uuuh!","x_groq":{"id":"req_01m6fcjdqqe4j9rr2hvr7h2wes"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 1, Agendar um horário.","x_groq":{"id":"req_01m6fcjr75e31aky7sf17x1xcs"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 2, a barba.","x_groq":{"id":"req_01m6fcjzvkehatdxdqy3r0n268"}}
+
+
+Erro: 
+Resposta: {"text":" Quero fazer com o Marcos.","x_groq":{"id":"req_01m6fck5x6ej8rjppnq44nbe1w"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 3, quinta-feira.","x_groq":{"id":"req_01m6fcke77e5q92g640ep1r4kh"}}
+
+
+Erro: 
+Resposta: {"text":" Dia 5 do 11, quinta-feira.","x_groq":{"id":"req_01m6fcksk8emjbhqcd9q2tyj3n"}}
+
+
+Erro: 
+Resposta: {"text":" Três.","x_groq":{"id":"req_01m6fcm0hver9870xef32tcfrr"}}
+
+
+Erro: 
+Resposta: {"text":" Dois.","x_groq":{"id":"req_01m6fcm76cek59gp4tfsgbdw82"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m6fcmdbre6sbkw7ydtj090c3"}}
+
+
+Erro: 
+Resposta: {"text":" Quatro.","x_groq":{"id":"req_01m6fcmne7e2cvj4z6kp51dj9k"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m6fcmwyrebzsxeqmbp42f00m"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m6fcn30aes8rpghv8xz9s412"}}
+
+
+Erro: 
+Resposta: {"text":" Dois.","x_groq":{"id":"req_01m6fcn8qqev2rh3e6z20fyets"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m6fcneh8e1tttrp1pdy1cnbn"}}
+
+
+Erro: 
+Resposta: {"text":" 5","x_groq":{"id":"req_01m6fcnksqeww8smzkzcr40jwx"}}
+
+

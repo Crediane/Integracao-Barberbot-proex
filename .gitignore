@@ -113,3 +113,5 @@ uploads/*
 !uploads/.gitkeep
 
 webhook/*_debug.txt
+
+config.php
