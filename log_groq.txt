@@ -118,3 +118,471 @@ Erro:
 Resposta: {"text":" 5","x_groq":{"id":"req_01m6fcnksqeww8smzkzcr40jwx"}}
 
 
+Erro: 
+Resposta: {"text":" Oi, vamos fazer um agendamento?","x_groq":{"id":"req_01m6pv0085ep5s0n8rjezpsny6"}}
+
+
+Erro: 
+Resposta: {"text":" Oi, vamos fazer um agendamento?","x_groq":{"id":"req_01m6pv2033ed283j7xvmwjrbps"}}
+
+
+Erro: 
+Resposta: {"text":" Oi, vamos fazer um agendamento?","x_groq":{"id":"req_01m6pv45pgey2tkz6t9pzj0fxs"}}
+
+
+Erro: 
+Resposta: {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+
+Erro: 
+Resposta: {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+
+Erro: 
+Resposta: {"text":" Quero agendar um corte.","x_groq":{"id":"req_01m738sd2needvbk22fmen7654"}}
+
+
+Erro: 
+Resposta: {"text":" Dois.","x_groq":{"id":"req_01m738sqzbes0b7hhgtgxt9360"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m738syjpejwb5ekvgkvvd90q"}}
+
+
+Erro: 
+Resposta: {"text":" 3, quinta-feira.","x_groq":{"id":"req_01m738t6sxedbbgyzwf7rkzdks"}}
+
+
+Erro: 
+Resposta: {"text":" Três.","x_groq":{"id":"req_01m738tdhfejra1eqrssf25se4"}}
+
+
+Erro: 
+Resposta: {"text":" Quatro.","x_groq":{"id":"req_01m738tm24ecyagx64pfmtwaat"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m738tv1xenmt0vegh9yyqe1t"}}
+
+
+Erro: 
+Resposta: {"text":" 5","x_groq":{"id":"req_01m738v1gsekkvpq7bktwgesg4"}}
+
+
+Erro: 
+Resposta: {"text":" Vamos fazer um agendamento?","x_groq":{"id":"req_01m739mq3wejftg99tc8mz9601"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m739n13ze8erkqxt5cepwv89"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m739naeye3q8ykv8qcnzb9s9"}}
+
+
+Erro: 
+Resposta: {"text":" Eu gostaria de agendar um horário.","x_groq":{"id":"req_01m739srd6er8s42st9z36xkdy"}}
+
+
+Erro: 
+Resposta: {"text":" Corte de cabelo","x_groq":{"id":"req_01m739t7jde01tt7ssxt5k1dwg"}}
+
+
+Erro: 
+Resposta: {"text":" João","x_groq":{"id":"req_01m739tnseearbgd9jenmsdj6y"}}
+
+
+Erro: 
+Resposta: {"text":" Sábado.","x_groq":{"id":"req_01m739v2xre7csh8j7yst4y0tk"}}
+
+
+Erro: 
+Resposta: {"text":" Quinta-feira.","x_groq":{"id":"req_01m739vjn6esq8w2b38bvm1y6w"}}
+
+
+Erro: 
+Resposta: {"text":" Quinta-feira","x_groq":{"id":"req_01m739vy8pe8f8e5ppq4xf69rj"}}
+
+
+Erro: 
+Resposta: {"text":" 14 de 11 de sábado","x_groq":{"id":"req_01m739x68aey3brxyt97czf955"}}
+
+
+Erro: 
+Resposta: {"text":" 10 horas da manhã","x_groq":{"id":"req_01m739zdaxe5kvfbw7q3bqejdc"}}
+
+
+Erro: 
+Resposta: {"text":" 10 horas","x_groq":{"id":"req_01m73a0ggde3q844a4gh2gnjkx"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero ver os meus agendamentos.","x_groq":{"id":"req_01m73a3d17edv85t9hjgnqc8b3"}}
+
+
+Erro: 
+Resposta: {"text":" e eu quero ver o endereço","x_groq":{"id":"req_01m73a3wygep6twa21f4g9zr5w"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero cancelar o agendamento.","x_groq":{"id":"req_01m73a4ejke0avzk2f8fkkyvw2"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero ver o endereço.","x_groq":{"id":"req_01m73a55nzefs9cjvrnmjf6eyr"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero cancelar o agendamento.","x_groq":{"id":"req_01m73a5qsret8sap1f47m7b761"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero cancelar o agendamento.","x_groq":{"id":"req_01m73a65rpexxve679bsm78hv2"}}
+
+
+Erro: 
+Resposta: {"text":" Cancelar","x_groq":{"id":"req_01m73a6xpee4jbsctazefr31nq"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero ver o endereço.","x_groq":{"id":"req_01m73a84yweng81v6rrskehpt7"}}
+
+
+Erro: 
+Resposta: {"text":" Agendar horário","x_groq":{"id":"req_01m73acqbjeqev9pcyqsxdkbsk"}}
+
+
+Erro: 
+Resposta: {"text":" Corte de cabelo","x_groq":{"id":"req_01m73ad39ve98a25bd2ekknkkt"}}
+
+
+Erro: 
+Resposta: {"text":" João","x_groq":{"id":"req_01m73adf91em5b16zdmpvtr3tk"}}
+
+
+Erro: 
+Resposta: {"text":" 14 de novembro","x_groq":{"id":"req_01m73ae3v6e9a9x29as1jqdmpx"}}
+
+
+Erro: 
+Resposta: {"text":" Sábado","x_groq":{"id":"req_01m73aemkqe1pbkdaw15vstgfk"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 2","x_groq":{"id":"req_01m73aft3he35r2j28tgq37m71"}}
+
+
+Erro: 
+Resposta: {"text":" 10 horas","x_groq":{"id":"req_01m73ag6gzewbvmy9c4c6y6m99"}}
+
+
+Erro: 
+Resposta: {"text":" Cancelar agendamento.","x_groq":{"id":"req_01m73ahrm3ex3tw1ckh27nej3r"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 4","x_groq":{"id":"req_01m73ajgjwet7rrm7gmc0h3j40"}}
+
+
+Erro: 
+Resposta: {"text":" Forba Burbucci, vamos agendar?","x_groq":{"id":"req_01m73cz2fse0sr22gak8d33f50"}}
+
+
+Erro: 
+Resposta: {"text":" Número 1 corte de cabelo","x_groq":{"id":"req_01m73czcvsem7vcrvv6yb44tkw"}}
+
+
+Erro: 
+Resposta: {"text":" Quero com um João.","x_groq":{"id":"req_01m73czn82eqv92hv3n2bxgs4p"}}
+
+
+Erro: 
+Resposta: {"text":" Número 4.","x_groq":{"id":"req_01m73czynmemba0ap26d231zgf"}}
+
+
+Erro: 
+Resposta: {"text":" Quero para o número 4, sexta-feira.","x_groq":{"id":"req_01m73d06yreazay6n8h1qzfr73"}}
+
+
+Erro: 
+Resposta: {"text":" Quatro.","x_groq":{"id":"req_01m73d0dene3ktpb8mf4bhntre"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m73d0rgpeeptkw4m3th23s8c"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m73d0zrvech89va9k8pcvr5c"}}
+
+
+Erro: 
+Resposta: {"text":" 5","x_groq":{"id":"req_01m73d1qcxedr9hgxsh6bgzarw"}}
+
+
+Erro: 
+Resposta: {"text":" Barber Butch, quero cancelar o agendamento.","x_groq":{"id":"req_01m73d1z5yes1936z04f5jvf4b"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m73d2bzte07brk91kn2nx8x1"}}
+
+
+Erro: 
+Resposta: {"text":" 1","x_groq":{"id":"req_01m73d2mdjezgbr9889rvwpfcs"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m73d2v2becfvz2eb1b0gjhq9"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m73d329fe0kshkz6em9zxqyr"}}
+
+
+Erro: 
+Resposta: {"text":" 6","x_groq":{"id":"req_01m73d398xe3krg0y5dsahkbps"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m73d3f8te0h9hnx2hp5j6rpw"}}
+
+
+Erro: 
+Resposta: {"text":" Oi, Baberbute, vamos fazer um agendamento?","x_groq":{"id":"req_01m78tkdfvezfaeaesyhw7ebcv"}}
+
+
+Erro: 
+Resposta: {"text":" 1.","x_groq":{"id":"req_01m78tkr72e9ds0kp9q2n6s8q6"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m78tkyg1etyt1211940kh1s0"}}
+
+
+Erro: 
+Resposta: {"text":" 1","x_groq":{"id":"req_01m78tm5g0ef4867wsjtq9tzdg"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m78tmc3pebftswcbc3hcp71w"}}
+
+
+Erro: 
+Resposta: {"text":" Dois.","x_groq":{"id":"req_01m78tmj76e46s9w06d9qtamwv"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m78tmr6xermvk89dhnxfed7c"}}
+
+
+Erro: 
+Resposta: {"text":" Dois.","x_groq":{"id":"req_01m78tmxzweacrajssm05jmhfa"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m78tn4m1e5zv898er37ckzr4"}}
+
+
+Erro: 
+Resposta: {"text":" 5","x_groq":{"id":"req_01m78tnep4eavvr2c7m5nq22hx"}}
+
+
+Erro: 
+Resposta: {"text":" Oi, Baberbute, vamos agendar um horário?","x_groq":{"id":"req_01m78tpaqae4y8w8e8vr0m527v"}}
+
+
+Erro: 
+Resposta: {"text":" Eu quero cabelo e barba, três.","x_groq":{"id":"req_01m78tpjp1e7y8bmrnhah1ex9a"}}
+
+
+Erro: 
+Resposta: {"text":" Número 1, João.","x_groq":{"id":"req_01m78tptfmets94djx77h1esva"}}
+
+
+Erro: 
+Resposta: {"text":" 2, sexta-feira.","x_groq":{"id":"req_01m78tq361e5y9dyfvnj6g9jwd"}}
+
+
+Erro: 
+Resposta: {"text":" 2.","x_groq":{"id":"req_01m78tqe3ge99a87xerpwmcgcg"}}
+
+
+Erro: 
+Resposta: {"text":" Quero as 16 horas.","x_groq":{"id":"req_01m78tqnwmebyrpbqdfm6r2nfs"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m78tqwtkeapbyzwsq0vc3hz3"}}
+
+
+Erro: 
+Resposta: {"text":" Oi Baberbucci, vamos agendar um horário?","x_groq":{"id":"req_01m78xvr37e4vbf2pkmqtvvxj2"}}
+
+
+Erro: 
+Resposta: {"text":" Quero o número 1, corte de cabelo.","x_groq":{"id":"req_01m78xwdtdeadt9g4mtfs4xhzh"}}
+
+
+Erro: 
+Resposta: {"text":" Número 2, Marcos.","x_groq":{"id":"req_01m78xwpzaee9ax5ed6707vad9"}}
+
+
+Erro: 
+Resposta: {"text":" Número 3.","x_groq":{"id":"req_01m78xwyprevnrna25zw5gpvw6"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m78xxbjvegdrtr4rajevha4h"}}
+
+
+Erro: 
+Resposta: {"text":" Quatro.","x_groq":{"id":"req_01m78xxkm1es3bkhwa27kbrt2n"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m78xyf5sek9bk45k55q39m58"}}
+
+
+Erro: 
+Resposta: {"text":" Agendar","x_groq":{"id":"req_01m78xyq2ceysrxya1mtgnqs5z"}}
+
+
+Erro: 
+Resposta: {"text":" Número 3, opção 3.","x_groq":{"id":"req_01m78xyxxae7avjj8kan2pw59b"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 3","x_groq":{"id":"req_01m78xz5fkemfb3qdtq8kpv38x"}}
+
+
+Erro: 
+Resposta: {"text":" Número 3","x_groq":{"id":"req_01m78xzbrhe8prfn9escbp24zt"}}
+
+
+Erro: 
+Resposta: {"text":" São três agora. Três.","x_groq":{"id":"req_01m78xzm6be2s9vtr0n2h2tgeb"}}
+
+
+Erro: 
+Resposta: {"text":" Três.","x_groq":{"id":"req_01m78xzss9ega9sdmn950vxnm4"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m78y01fmem8v6x5vr1yd2m83"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 6.","x_groq":{"id":"req_01m78y0867e5msbrm8nt526f2n"}}
+
+
+Erro: 
+Resposta: {"text":" Número 6","x_groq":{"id":"req_01m78y0eraev8bs44z1tb4fkpk"}}
+
+
+Erro: 
+Resposta: {"text":" 6.","x_groq":{"id":"req_01m78y0n9xew482sscswpv0jwf"}}
+
+
+Erro: 
+Resposta: {"text":" Cinco.","x_groq":{"id":"req_01m78y0w7des5vecab3k4q8eg3"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m78y13m7e70ty667qbmz4gyd"}}
+
+
+Erro: 
+Resposta: {"text":" Opção 2.","x_groq":{"id":"req_01m78y1bnhegsrwekv5zfx0mr9"}}
+
+
+Erro: 
+Resposta: {"text":" Ver meus agendamentos.","x_groq":{"id":"req_01m78y203he9s8256s6jw2yy53"}}
+
+
+Erro: 
+Resposta: {"text":" Cancelar agendamento.","x_groq":{"id":"req_01m78y2cwtedj8xx7thdh8d882"}}
+
+
+Erro: 
+Resposta: {"text":" Oi, vamos agendar?","x_groq":{"id":"req_01m7tv0m2zesk9p418j4qmpwzy"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m7tv0t9mekh8sjzgx16he73q"}}
+
+
+Erro: 
+Resposta: {"text":" 2.","x_groq":{"id":"req_01m7tv0z4fezv8af5gd7e1fk48"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m7tv157peharqc53fvwgen6g"}}
+
+
+Erro: 
+Resposta: {"text":" 2","x_groq":{"id":"req_01m7tv1b70eh7v9jy5ccx7nt35"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m7tv1gzne8pvmpabkmbm1bkq"}}
+
+
+Erro: 
+Resposta: {"text":" 2.","x_groq":{"id":"req_01m7tv1pqjem9bhz9fm3fh1xh3"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m7tv1wmpe3cs4dbkj28fh70p"}}
+
+
+Erro: 
+Resposta: {"text":" 3","x_groq":{"id":"req_01m7tv223tesyv4j6czckw6b5b"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m7tv277texr85c2wez826xmf"}}
+
+
+Erro: 
+Resposta: {"text":" 1.","x_groq":{"id":"req_01m7tv2bpjekjthtz4kefx8hk2"}}
+
+
+Erro: 
+Resposta: {"text":" 1.","x_groq":{"id":"req_01m7tv2gbjetybc75j5a0pew0q"}}
+
+
+Erro: 
+Resposta: {"text":" Dois.","x_groq":{"id":"req_01m7tv2mvze9btab11cbypy4gq"}}
+
+
+Erro: 
+Resposta: {"text":" Quatro.","x_groq":{"id":"req_01m7tv2wcne0wtrt3dr2aty4w3"}}
+
+
+Erro: 
+Resposta: {"text":" 3.","x_groq":{"id":"req_01m7tv31c2e62t8vc7h8gsmcwp"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m7tv36g3eyd935z5bnkvh6fk"}}
+
+
+Erro: 
+Resposta: {"text":" 4","x_groq":{"id":"req_01m7tv3c2de9x8q5e0y99ykt7e"}}
+
+
+Erro: 
+Resposta: {"text":" 1.","x_groq":{"id":"req_01m7tv3p3aet48kgk8rgbvdcgx"}}
+
+
+Erro: 
+Resposta: {"text":" Zero.","x_groq":{"id":"req_01m7tv3tvve48rz77p9pja7ksx"}}
+
+
+Erro: 
+Resposta: {"text":" 5.","x_groq":{"id":"req_01m7tv406bebcb0f78fq4hvtmp"}}
+
+
