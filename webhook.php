@@ -59,12 +59,41 @@ function buscarAudioDaEvolution($dados_mensagem) {
 $json_recebido = file_get_contents('php://input');
 $dados = json_decode($json_recebido, true);
 
+// --- INÍCIO DO BLOQUEIO ANTI-LOOP E FILTROS ---
+// 1. Ignora eventos que não são mensagens novas (ex: status de lida, entregue)
+if (isset($dados['event']) && $dados['event'] !== 'messages.upsert') {
+    http_response_code(200);
+    exit;
+}
+
+// 2. Ignora requisições vazias ou sem o objeto de mensagem
+if (!isset($dados['data']['message'])) {
+    http_response_code(200);
+    exit;
+}
+
+// 3. Ignora mensagens enviadas pelo próprio bot ou pelo seu próprio número (fromMe)
+if (isset($dados['data']['key']['fromMe']) && $dados['data']['key']['fromMe'] == true) {
+    http_response_code(200);
+    exit;
+}
+// --- FIM DO BLOQUEIO ANTI-LOOP ---
+
 // Atualiza o log visual do WhatsApp
 file_put_contents('log_whatsapp.txt', print_r($dados, true));
 
 if (isset($dados['data']['key']['remoteJid'])) {
     $fromMe = $dados['data']['key']['fromMe'];
     $numero_remetente = $dados['data']['key']['remoteJid'];
+
+    // --- NOVO FILTRO ANTI-BOTS E GRUPOS ---
+$apenas_numeros = preg_replace('/[^0-9]/', '', $numero_remetente);
+// Ignora grupos (@g.us) e números de serviços automáticos (com menos de 10 dígitos)
+if (strpos($numero_remetente, '@g.us') !== false || strlen($apenas_numeros) < 10) {
+    http_response_code(200);
+    exit;
+}
+// --------------------------------------
     
     // CAPTURA DO TIPO DE MENSAGEM
     $tipo_mensagem = $dados['data']['messageType'] ?? '';
